@@ -676,3 +676,6 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, () => {
   console.log(`🌐 7H STUDIOS Web App with Direct OAuth2 Login running at: http://localhost:${PORT}`);
 });
+
+module.exports = server;
+
