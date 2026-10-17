@@ -650,34 +650,28 @@ const requestHandler = async (req, res) => {
     reqPath = '/index.html';
   }
 
-  const filePath = path.join(PUBLIC_DIR, reqPath);
-
-  if (!filePath.startsWith(PUBLIC_DIR)) {
-    res.writeHead(403);
-    res.end('Forbidden');
-    return;
+  // Look in both public/ and root directory
+  let targetFile = path.join(__dirname, 'public', reqPath);
+  if (!fs.existsSync(targetFile)) {
+    targetFile = path.join(__dirname, reqPath);
   }
 
-  fs.stat(filePath, (err, stats) => {
-    if (err || !stats.isFile()) {
-      res.writeHead(404, { 'Content-Type': 'text/plain' });
-      res.end('404 Not Found');
+  try {
+    if (fs.existsSync(targetFile) && fs.statSync(targetFile).isFile()) {
+      const ext = path.extname(targetFile).toLowerCase();
+      const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+      const content = fs.readFileSync(targetFile);
+      res.writeHead(200, { 'Content-Type': contentType });
+      res.end(content);
       return;
     }
+  } catch (err) {
+    console.error('File serving error:', err);
+  }
 
-    const ext = path.extname(filePath).toLowerCase();
-    const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+  res.writeHead(404, { 'Content-Type': 'text/plain' });
+  res.end('404 Not Found');
 
-    const stream = fs.createReadStream(filePath);
-    stream.on('error', () => {
-      if (!res.headersSent) {
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('404 Not Found');
-      }
-    });
-    res.writeHead(200, { 'Content-Type': contentType });
-    stream.pipe(res);
-  });
 
 };
 
