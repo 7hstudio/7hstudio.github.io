@@ -668,10 +668,17 @@ const requestHandler = async (req, res) => {
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
-    res.writeHead(200, { 'Content-Type': contentType });
     const stream = fs.createReadStream(filePath);
+    stream.on('error', () => {
+      if (!res.headersSent) {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('404 Not Found');
+      }
+    });
+    res.writeHead(200, { 'Content-Type': contentType });
     stream.pipe(res);
   });
+
 };
 
 if (!process.env.VERCEL) {
