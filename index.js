@@ -365,6 +365,59 @@ const requestHandler = async (req, res) => {
     }
   }
 
+  // Create / Record Order and Notify Staff on Discord
+  if (pathname === '/api/orders/create' && req.method === 'POST') {
+    try {
+      const payload = await parseBody(req);
+      const { productId, productName, price, customer, paymentMethod, reference } = payload;
+      const orderId = '7H-ORD-' + Math.floor(1000 + Math.random() * 9000);
+
+      if (DISCORD_TOKEN) {
+        try {
+          const targetChannel = '1549470009439420447';
+          const custTag = (customer && customer.id) 
+            ? `<@${customer.id}> (${customer.username})` 
+            : (customer && customer.username ? customer.username : 'Guest');
+
+          const embed = {
+            title: `🛒 NEW ORDER: #${orderId}`,
+            description: `An order has been placed on the **7H STUDIOS** web store!`,
+            color: 0x10b981,
+            fields: [
+              { name: '📦 Asset Ordered', value: `${productName || 'FiveM Asset'}`, inline: true },
+              { name: '💰 Price', value: `${price || 'N/A'}`, inline: true },
+              { name: '💳 Payment Method', value: `${paymentMethod || 'Selected'}`, inline: true },
+              { name: '👤 Customer', value: `${custTag}`, inline: true },
+              { name: '📝 Ref / Note', value: `${reference || 'None'}`, inline: true },
+              { name: '⚡ Status', value: '⏳ Awaiting Payment / Ticket Verification', inline: true }
+            ],
+            footer: { text: '7H STUDIOS • Order Dispatch Engine' },
+            timestamp: new Date().toISOString()
+          };
+
+          await fetch(`https://discord.com/api/v10/channels/${targetChannel}/messages`, {
+            method: 'POST',
+            headers: { Authorization: `Bot ${DISCORD_TOKEN}`, 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              content: `🚨 **NEW ORDER NOTIFICATION** — ${custTag} ordered **${productName}**!`,
+              embeds: [embed]
+            })
+          });
+        } catch(e) {
+          console.warn('Discord order dispatch error:', e);
+        }
+      }
+
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'application/json');
+      return res.end(JSON.stringify({ success: true, orderId }));
+    } catch(err) {
+      res.statusCode = 500;
+      res.setHeader('Content-Type', 'application/json');
+      return res.end(JSON.stringify({ success: false, message: err.message }));
+    }
+  }
+
   // Admin APIs
   if (pathname.startsWith('/api/admin/')) {
     const action = pathname.replace('/api/admin/', '');

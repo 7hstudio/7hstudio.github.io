@@ -438,6 +438,8 @@ function initApp() {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         if (modalBackdrop && modalBackdrop.classList.contains('active')) closeModalDirect();
+        const checkoutBackdrop = document.getElementById('checkout-modal-backdrop');
+        if (checkoutBackdrop && checkoutBackdrop.classList.contains('active')) closeCheckoutModalDirect();
       }
       if (e.key === 'Enter') {
         if (document.body.classList.contains('gate-locked') && gateUserInput && gateUserInput === document.activeElement) {
@@ -770,32 +772,210 @@ function initApp() {
     });
   };
 
-  window.orderProduct = function(id) {
-    const prod = PRODUCTS.find(p => p.id === id);
-    const prodName = prod ? prod.name : 'FiveM Asset';
-    const isFree = prod && prod.isFree;
-    const isVerified = !!verifiedMember;
+  // ===================================================================
+  // 7H STUDIOS SECURE MULTI-PAYMENT CHECKOUT SYSTEM
+  // ===================================================================
+  let activeCheckoutProduct = null;
+  let currentPaymentMethod = 'gpay';
 
-    let finalPrice = prod ? prod.price : '';
-    let memberTag = '';
-    if (isVerified) {
-      if (!isFree && prod.price.includes('$')) {
-        finalPrice = calculateMemberPrice(prod.price) + ' (10% Member Discount Applied)';
+  window.orderProduct = function(id) {
+    // If product detail modal is open, close it first
+    if (modalBackdrop && modalBackdrop.classList.contains('active')) {
+      closeModalDirect();
+    }
+    openCheckoutModal(id);
+  };
+
+  window.openCheckoutModal = function(id) {
+    const prod = PRODUCTS.find(p => p.id === id);
+    if (!prod) return;
+    activeCheckoutProduct = prod;
+
+    const modalBackdrop = document.getElementById('checkout-modal-backdrop');
+    if (!modalBackdrop) return;
+
+    // Reset views
+    const viewForm = document.getElementById('checkout-view-form');
+    const viewSuccess = document.getElementById('checkout-view-success');
+    if (viewForm) viewForm.style.display = 'block';
+    if (viewSuccess) viewSuccess.style.display = 'none';
+
+    // Populate Product Info
+    const elThumb = document.getElementById('checkout-prod-thumb');
+    const elCat = document.getElementById('checkout-prod-cat');
+    const elName = document.getElementById('checkout-prod-name');
+    const elBasePrice = document.getElementById('checkout-base-price');
+    const elDiscountRow = document.getElementById('checkout-discount-row');
+    const elDiscountVal = document.getElementById('checkout-discount-val');
+    const elTotalPrice = document.getElementById('checkout-total-price');
+    const elTotalMad = document.getElementById('checkout-total-mad');
+
+    if (elThumb) elThumb.src = prod.thumbnail || 'assets/images/logo.png';
+    if (elCat) elCat.textContent = prod.category || 'Script';
+    if (elName) elName.textContent = prod.name;
+
+    // Price calculation
+    const rawPrice = prod.price || '$0.00';
+    const isFree = prod.isFree || rawPrice.toLowerCase().includes('free') || rawPrice === '$0';
+    
+    let basePriceNum = 0;
+    const match = rawPrice.match(/\$?(\d+(\.\d+)?)/);
+    if (match) basePriceNum = parseFloat(match[1]);
+
+    if (isFree) {
+      if (elBasePrice) elBasePrice.textContent = 'FREE DOWNLOAD';
+      if (elDiscountRow) elDiscountRow.style.display = 'none';
+      if (elTotalPrice) elTotalPrice.textContent = '$0.00 (Free)';
+      if (elTotalMad) elTotalMad.textContent = '(0 MAD)';
+    } else {
+      if (elBasePrice) elBasePrice.textContent = `$${basePriceNum.toFixed(2)}`;
+      
+      if (verifiedMember) {
+        const discount = basePriceNum * 0.10;
+        const finalPrice = basePriceNum - discount;
+        const madPrice = Math.round(finalPrice * 10);
+        if (elDiscountRow) elDiscountRow.style.display = 'flex';
+        if (elDiscountVal) elDiscountVal.textContent = `-10% (-$${discount.toFixed(2)})`;
+        if (elTotalPrice) elTotalPrice.textContent = `$${finalPrice.toFixed(2)}`;
+        if (elTotalMad) elTotalMad.textContent = `(~${madPrice} MAD)`;
+      } else {
+        const madPrice = Math.round(basePriceNum * 10);
+        if (elDiscountRow) elDiscountRow.style.display = 'none';
+        if (elTotalPrice) elTotalPrice.textContent = `$${basePriceNum.toFixed(2)}`;
+        if (elTotalMad) elTotalMad.textContent = `(~${madPrice} MAD)`;
       }
-      memberTag = ` | Member: ${verifiedMember.username} (${verifiedMember.id})`;
     }
 
-    const textToCopy = `Hello 7H Studios! I want to order: ${prodName} [Price: ${finalPrice}]${memberTag}`;
+    // Populate Customer Details
+    const elCustAvatar = document.getElementById('checkout-cust-avatar');
+    const elCustName = document.getElementById('checkout-cust-name');
+    const elCustBadge = document.getElementById('checkout-cust-badge');
+    const elInputRef = document.getElementById('checkout-input-ref');
 
-    navigator.clipboard.writeText(textToCopy).then(() => {
-      showToast(`Copied order details to clipboard! Redirecting to 7H Discord ticket...`);
-    }).catch(() => {
-      showToast(`Opening 7H Studios Discord...`);
+    if (verifiedMember) {
+      if (elCustAvatar) elCustAvatar.src = verifiedMember.avatar || 'assets/images/logo.png';
+      if (elCustName) elCustName.textContent = verifiedMember.displayName || verifiedMember.username;
+      if (elCustBadge) {
+        elCustBadge.textContent = '✔ Verified 7H Member (-10% Applied)';
+        elCustBadge.style.color = '#10b981';
+      }
+      if (elInputRef && !elInputRef.value) {
+        elInputRef.value = `@${verifiedMember.username} (ID: ${verifiedMember.id})`;
+      }
+    } else {
+      if (elCustAvatar) elCustAvatar.src = 'assets/images/logo.png';
+      if (elCustName) elCustName.textContent = 'Guest Visitor';
+      if (elCustBadge) {
+        elCustBadge.textContent = '⚡ Guest Checkout (Authorize Discord for 10% OFF)';
+        elCustBadge.style.color = '#94a3b8';
+      }
+    }
+
+    // Default to gpay
+    switchPaymentMethod('gpay');
+
+    modalBackdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeCheckoutModalDirect = function() {
+    const modalBackdrop = document.getElementById('checkout-modal-backdrop');
+    if (modalBackdrop) modalBackdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  window.closeCheckoutModal = function(e) {
+    if (e.target && e.target.id === 'checkout-modal-backdrop') {
+      closeCheckoutModalDirect();
+    }
+  };
+
+  window.switchPaymentMethod = function(method) {
+    currentPaymentMethod = method;
+    document.querySelectorAll('.pay-tab').forEach(tab => {
+      tab.classList.toggle('active', tab.getAttribute('data-method') === method);
     });
+    document.querySelectorAll('.pay-panel').forEach(panel => {
+      panel.classList.toggle('active', panel.id === `pay-panel-${method}`);
+    });
+  };
 
-    setTimeout(() => {
-      window.open('https://discord.gg', '_blank');
-    }, 800);
+  window.copyPaymentData = function(text, successMsg) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast(successMsg || 'Copié dans le presse-papiers !');
+    }).catch(() => {
+      showToast('Copié : ' + text);
+    });
+  };
+
+  window.submitFinalOrder = async function() {
+    if (!activeCheckoutProduct) return;
+    const btnSubmit = document.getElementById('btn-submit-order');
+    if (btnSubmit) {
+      btnSubmit.disabled = true;
+      btnSubmit.innerHTML = `<span>⏳ Enregistrement de la commande...</span>`;
+    }
+
+    const inputRef = document.getElementById('checkout-input-ref');
+    const reference = inputRef ? inputRef.value.trim() : '';
+    const elTotalPrice = document.getElementById('checkout-total-price');
+    const finalPrice = elTotalPrice ? elTotalPrice.textContent : activeCheckoutProduct.price;
+
+    const methodLabels = {
+      gpay: 'Google Pay / Cards (Ko-fi)',
+      cih: 'CIH Bank / CashPlus (Maroc)',
+      paypal: 'PayPal',
+      crypto: 'Binance Pay / USDT'
+    };
+
+    const orderPayload = {
+      productId: activeCheckoutProduct.id,
+      productName: activeCheckoutProduct.name,
+      price: finalPrice,
+      customer: verifiedMember ? {
+        id: verifiedMember.id,
+        username: verifiedMember.username,
+        displayName: verifiedMember.displayName
+      } : {
+        username: reference || 'Guest'
+      },
+      paymentMethod: methodLabels[currentPaymentMethod] || currentPaymentMethod,
+      reference: reference || 'Non précisé'
+    };
+
+    let orderId = '7H-ORD-' + Math.floor(1000 + Math.random() * 9000);
+
+    try {
+      const res = await fetch('/api/orders/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(orderPayload)
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.orderId) orderId = data.orderId;
+      }
+    } catch (e) {
+      console.warn('Backend order notification note:', e);
+    }
+
+    if (btnSubmit) {
+      btnSubmit.disabled = false;
+      btnSubmit.innerHTML = `<span>🚀 Confirmer la Commande & Notifier le Staff</span>`;
+    }
+
+    // Switch to success view
+    const viewForm = document.getElementById('checkout-view-form');
+    const viewSuccess = document.getElementById('checkout-view-success');
+    const elSuccessOrderId = document.getElementById('success-order-id');
+    const elSuccessMethod = document.getElementById('success-method-label');
+
+    if (viewForm) viewForm.style.display = 'none';
+    if (viewSuccess) viewSuccess.style.display = 'block';
+    if (elSuccessOrderId) elSuccessOrderId.textContent = `Commande #${orderId}`;
+    if (elSuccessMethod) elSuccessMethod.textContent = methodLabels[currentPaymentMethod] || currentPaymentMethod;
+
+    showToast(`🎉 Commande #${orderId} enregistrée !`);
   };
 
   window.copyProductLink = function() {

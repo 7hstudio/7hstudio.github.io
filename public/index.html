@@ -583,6 +583,271 @@
   </div>
 
   <!-- ===================================================================
+       7H STUDIOS SECURE CHECKOUT & PAYMENT MODAL (GOOGLE PAY, CARDS, PAYPAL, CIH, CRYPTO)
+       =================================================================== -->
+  <div class="modal-backdrop checkout-modal-backdrop" id="checkout-modal-backdrop" onclick="closeCheckoutModal(event)">
+    <div class="modal-card checkout-modal-card" id="checkout-modal-card">
+      <button class="modal-close-btn" onclick="closeCheckoutModalDirect()" aria-label="Close checkout">&times;</button>
+      
+      <!-- Modal Main View -->
+      <div id="checkout-view-form">
+        <div class="checkout-header">
+          <div class="checkout-brand-title">
+            <span class="checkout-shield-icon">🛡️</span>
+            <div>
+              <h2 class="checkout-title">7H STUDIOS SECURE CHECKOUT</h2>
+              <span class="checkout-subtitle">INSTANT FIVEM ASSET DISPATCH • 24/7 VERIFIED</span>
+            </div>
+          </div>
+          <div class="checkout-security-badge">
+            <span class="status-indicator-live"></span>
+            <span>100% Free & Secure Gateway</span>
+          </div>
+        </div>
+
+        <div class="checkout-body-grid">
+          <!-- Left Column: Product Order Summary -->
+          <div class="checkout-summary-pane">
+            <div class="checkout-product-card">
+              <div class="checkout-prod-thumb-wrap">
+                <img src="assets/images/logo.png" alt="Product Preview" id="checkout-prod-thumb" class="checkout-prod-img">
+                <span class="checkout-prod-cat" id="checkout-prod-cat">Script</span>
+              </div>
+              <div class="checkout-prod-info">
+                <h3 class="checkout-prod-name" id="checkout-prod-name">Product Name</h3>
+                <div class="checkout-price-block">
+                  <div class="checkout-price-row">
+                    <span class="price-lbl">Base Price:</span>
+                    <span class="price-val" id="checkout-base-price">$0.00</span>
+                  </div>
+                  <div class="checkout-price-row discount-row" id="checkout-discount-row">
+                    <span class="price-lbl">VIP Member Discount:</span>
+                    <span class="price-val discount-val" id="checkout-discount-val">-10% ($0.00)</span>
+                  </div>
+                  <div class="checkout-price-divider"></div>
+                  <div class="checkout-price-row total-row">
+                    <span class="price-lbl">Total to Pay:</span>
+                    <div class="price-total-wrap">
+                      <span class="price-total" id="checkout-total-price">$0.00</span>
+                      <span class="price-mad-sub" id="checkout-total-mad">(~0 MAD)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Customer Identity Tag -->
+            <div class="checkout-customer-box">
+              <div class="customer-avatar-wrap">
+                <img src="assets/images/logo.png" alt="Customer Avatar" id="checkout-cust-avatar" class="customer-avatar">
+              </div>
+              <div class="customer-details">
+                <div class="customer-name" id="checkout-cust-name">Guest Customer</div>
+                <div class="customer-badge" id="checkout-cust-badge">⚡ Guest Checkout</div>
+              </div>
+            </div>
+
+            <!-- Perks Highlights -->
+            <div class="checkout-perks-list">
+              <div class="checkout-perk"><span class="perk-icon">⚡</span><span>Instant Discord Ticket Delivery</span></div>
+              <div class="checkout-perk"><span class="perk-icon">💎</span><span>100% Virus-Free & Escrow Protected</span></div>
+              <div class="checkout-perk"><span class="perk-icon">🛠️</span><span>24/7 Developer Support via Discord</span></div>
+            </div>
+          </div>
+
+          <!-- Right Column: Payment Options & Customer Confirmation -->
+          <div class="checkout-payment-pane">
+            <h4 class="payment-section-title">Select Payment Method:</h4>
+
+            <!-- Payment Method Pills / Selector -->
+            <div class="payment-tabs-grid">
+              <button type="button" class="pay-tab active" data-method="gpay" onclick="switchPaymentMethod('gpay')">
+                <span class="pay-tab-icon">📱</span>
+                <span class="pay-tab-text">Google Pay / Cards</span>
+                <span class="pay-tab-badge">Popular</span>
+              </button>
+              <button type="button" class="pay-tab" data-method="cih" onclick="switchPaymentMethod('cih')">
+                <span class="pay-tab-icon">🇲🇦</span>
+                <span class="pay-tab-text">CIH Bank / CashPlus</span>
+                <span class="pay-tab-badge">0% Frais</span>
+              </button>
+              <button type="button" class="pay-tab" data-method="paypal" onclick="switchPaymentMethod('paypal')">
+                <span class="pay-tab-icon">🅿️</span>
+                <span class="pay-tab-text">PayPal</span>
+              </button>
+              <button type="button" class="pay-tab" data-method="crypto" onclick="switchPaymentMethod('crypto')">
+                <span class="pay-tab-icon">⚡</span>
+                <span class="pay-tab-text">Binance Pay / USDT</span>
+              </button>
+            </div>
+
+            <!-- Payment Method Content Panels -->
+            <div class="pay-panels-container">
+              <!-- Panel 1: Google Pay & Card via Ko-fi (100% Free Gateway) -->
+              <div class="pay-panel active" id="pay-panel-gpay">
+                <div class="pay-card-details">
+                  <div class="pay-icons-row">
+                    <span class="pay-brand-tag gpay-brand">Google Pay</span>
+                    <span class="pay-brand-tag applepay-brand">Apple Pay</span>
+                    <span class="pay-brand-tag visa-brand">VISA</span>
+                    <span class="pay-brand-tag mc-brand">Mastercard</span>
+                  </div>
+                  <p class="pay-desc">
+                    Paiement direct et sécurisé par <strong>Google Pay</strong>, <strong>Apple Pay</strong> ou carte bancaire avec <strong>0% de frais additionnels</strong> via Ko-fi (100% gratuit).
+                  </p>
+                  <div class="pay-action-box">
+                    <a href="https://ko-fi.com/7hstudios" target="_blank" rel="noopener noreferrer" class="btn btn-emerald btn-block pay-cta-btn" id="btn-gpay-action">
+                      <span>📱 Payer avec Google Pay / Carte Bancaire</span>
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 2: CIH Bank / CashPlus Morocco (0% Fees) -->
+              <div class="pay-panel" id="pay-panel-cih">
+                <div class="pay-card-details">
+                  <div class="cih-badge-header">
+                    <span class="morocco-flag">🇲🇦</span>
+                    <strong>Virement CIH Mobile / Versement CashPlus</strong>
+                  </div>
+                  <p class="pay-desc">
+                    Virement gratuit instantané par CIH Mobile (0 DH de frais) ou versement CashPlus / Wafacash partout au Maroc.
+                  </p>
+                  
+                  <div class="bank-data-card">
+                    <div class="bank-data-row">
+                      <span class="data-key">Banque:</span>
+                      <span class="data-val">CIH BANK (Maroc)</span>
+                    </div>
+                    <div class="bank-data-row">
+                      <span class="data-key">Titulaire du compte:</span>
+                      <span class="data-val" id="cih-holder-name">7H STUDIOS FIVEM</span>
+                    </div>
+                    <div class="bank-data-row">
+                      <span class="data-key">RIB CIH (24 chiffres):</span>
+                      <div class="rib-copy-wrap">
+                        <code class="rib-code" id="cih-rib-value">230 780 445089201100 24</code>
+                        <button type="button" class="btn-copy-code" onclick="copyPaymentData('23078044508920110024', 'RIB CIH copié avec succès !')">
+                          📋 Copier RIB
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 3: PayPal -->
+              <div class="pay-panel" id="pay-panel-paypal">
+                <div class="pay-card-details">
+                  <p class="pay-desc">
+                    Envoyez votre paiement directement via PayPal.me avec protection acheteur.
+                  </p>
+                  <div class="bank-data-card">
+                    <div class="bank-data-row">
+                      <span class="data-key">Lien PayPal.me:</span>
+                      <div class="rib-copy-wrap">
+                        <code class="rib-code" id="paypal-link-val">paypal.me/7hstudios</code>
+                        <button type="button" class="btn-copy-code" onclick="copyPaymentData('https://paypal.me/7hstudios', 'Lien PayPal copié !')">
+                          📋 Copier Lien
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pay-action-box" style="margin-top:0.8rem;">
+                    <a href="https://paypal.me/7hstudios" target="_blank" rel="noopener noreferrer" class="btn btn-discord btn-block pay-cta-btn">
+                      <span>🅿️ Ouvrir PayPal.me & Payer</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 4: Binance Pay / Crypto USDT -->
+              <div class="pay-panel" id="pay-panel-crypto">
+                <div class="pay-card-details">
+                  <p class="pay-desc">
+                    Paiement instantané sans frais via Binance Pay (Pay ID) ou USDT (TRC-20 / BEP-20).
+                  </p>
+                  <div class="bank-data-card">
+                    <div class="bank-data-row">
+                      <span class="data-key">Binance Pay ID:</span>
+                      <div class="rib-copy-wrap">
+                        <code class="rib-code" id="binance-id-val">784920193</code>
+                        <button type="button" class="btn-copy-code" onclick="copyPaymentData('784920193', 'Binance Pay ID copié !')">
+                          📋 Copier ID
+                        </button>
+                      </div>
+                    </div>
+                    <div class="bank-data-row">
+                      <span class="data-key">USDT (TRC-20):</span>
+                      <div class="rib-copy-wrap">
+                        <code class="rib-code" id="usdt-trc-val">TXq7HStudiosOfficialNetworkAddressUSDT</code>
+                        <button type="button" class="btn-copy-code" onclick="copyPaymentData('TXq7HStudiosOfficialNetworkAddressUSDT', 'Adresse USDT copiée !')">
+                          📋 Copier
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Customer Notes / Reference Input -->
+            <div class="checkout-input-group">
+              <label class="checkout-lbl" for="checkout-input-ref">Numéro de transaction / Référence ou Pseudo Discord:</label>
+              <input type="text" class="checkout-field" id="checkout-input-ref" placeholder="Ex: @votre_pseudo ou Réf virement CIH / Binance TxID...">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="checkout-submit-wrap">
+              <button type="button" class="btn btn-emerald btn-large btn-block" id="btn-submit-order" onclick="submitFinalOrder()">
+                <span>🚀 Confirmer la Commande & Notifier le Staff</span>
+              </button>
+              <p class="checkout-note-sub">
+                ⚡ Une notification directe avec votre commande sera envoyée instantanément au staff 7H STUDIOS sur Discord.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Success View -->
+      <div id="checkout-view-success" style="display: none;">
+        <div class="checkout-success-box">
+          <div class="success-icon-wrap">
+            <svg class="success-check-svg" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h2 class="success-title">COMMANDE ENREGISTRÉE AVEC SUCCÈS !</h2>
+          <div class="order-id-pill" id="success-order-id">Commande #7H-ORD-XXXX</div>
+          <p class="success-desc">
+            Votre commande a été transmise en temps réel au staff de <strong>7H STUDIOS</strong> sur le Discord officiel.
+          </p>
+          <div class="success-steps-box">
+            <h4>📋 Prochaines étapes :</h4>
+            <ol>
+              <li>Effectuez votre règlement via le moyen choisi (<span id="success-method-label" style="font-weight:700; color:#10b981;">Google Pay / CIH Bank</span>).</li>
+              <li>Rejoignez notre serveur Discord et ouvrez un ticket d'achat.</li>
+              <li>Donnez votre numéro de commande pour recevoir vos fichiers immédiatement !</li>
+            </ol>
+          </div>
+          <div class="success-actions-row">
+            <a href="https://discord.gg" target="_blank" rel="noopener noreferrer" class="btn btn-discord btn-large" style="flex:2;">
+              <span>🚀 Rejoindre le Discord pour Récupérer le Script</span>
+            </a>
+            <button type="button" class="btn btn-glass btn-large" onclick="closeCheckoutModalDirect()" style="flex:1;">
+              <span>Fermer</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================================
        EXECUTIVE ADMIN CONTROL PANEL MODAL (STRICTLY AUTHORIZED DISCORD IDS)
        =================================================================== -->
   <div class="modal-backdrop admin-modal-backdrop" id="admin-panel-backdrop" onclick="closeAdminModal(event)">
