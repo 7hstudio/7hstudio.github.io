@@ -46,9 +46,10 @@ const MIME_TYPES = {
   '.ico': 'image/x-icon'
 };
 
-const server = http.createServer(async (req, res) => {
+const requestHandler = async (req, res) => {
   const parsedUrl = url.parse(req.url, true);
   const pathname = parsedUrl.pathname;
+
 
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -671,11 +672,15 @@ const server = http.createServer(async (req, res) => {
     const stream = fs.createReadStream(filePath);
     stream.pipe(res);
   });
-});
+};
 
-server.listen(PORT, () => {
-  console.log(`🌐 7H STUDIOS Web App with Direct OAuth2 Login running at: http://localhost:${PORT}`);
-});
+if (!process.env.VERCEL) {
+  const server = http.createServer(requestHandler);
+  server.listen(PORT, () => {
+    console.log(`🌐 7H STUDIOS Web App with Direct OAuth2 Login running at: http://localhost:${PORT}`);
+  });
+}
 
-module.exports = server;
+module.exports = requestHandler;
+
 
