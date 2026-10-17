@@ -100,10 +100,12 @@ body.gate-locked {
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
+body:not(.gate-locked) .mandatory-gate-overlay,
 .mandatory-gate-overlay.unlocked {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .gate-scanlines {

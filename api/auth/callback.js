@@ -7,103 +7,66 @@ module.exports = (req, res) => {
   <meta charset="UTF-8">
   <title>Entering 7H STUDIOS...</title>
   <style>
-    body {
-      background: #07090e;
-      color: #fff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      text-align: center;
-    }
-    .auth-loader-box {
-      background: #0e121b;
-      border: 1px solid rgba(88, 101, 242, 0.4);
-      box-shadow: 0 0 45px rgba(88, 101, 242, 0.3);
-      border-radius: 20px;
-      padding: 3rem 2.5rem;
-      max-width: 440px;
-      width: 90%;
-    }
-    .spinner {
-      width: 52px;
-      height: 52px;
-      border: 4px solid rgba(88, 101, 242, 0.2);
-      border-top-color: #5865F2;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin: 0 auto 1.5rem;
-    }
+    body { background: #07090e; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; text-align: center; }
+    .box { background: #0e121b; border: 1px solid rgba(88, 101, 242, 0.4); box-shadow: 0 0 45px rgba(88, 101, 242, 0.3); border-radius: 20px; padding: 3rem 2.5rem; max-width: 440px; width: 90%; }
+    .spinner { width: 52px; height: 52px; border: 4px solid rgba(88, 101, 242, 0.2); border-top-color: #5865F2; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 1.5rem; }
     @keyframes spin { to { transform: rotate(360deg); } }
     h2 { margin: 0 0 0.5rem; font-size: 1.4rem; font-weight: 700; color: #fff; }
-    p { margin: 0; color: #94a3b8; font-size: 0.95rem; line-height: 1.5; }
+    p { margin: 0; color: #94a3b8; font-size: 0.95rem; }
   </style>
 </head>
 <body>
-  <div class="auth-loader-box">
+  <div class="box">
     <div class="spinner"></div>
     <h2>Access Granted!</h2>
-    <p id="status-msg">Logging in & entering 7H STUDIOS...</p>
+    <p id="msg">Entering 7H STUDIOS Store...</p>
   </div>
-
   <script>
-    async function processAuth() {
-      const statusMsg = document.getElementById('status-msg');
-      
-      const hash = window.location.hash.substring(1);
-      const hashParams = new URLSearchParams(hash);
-      const token = hashParams.get('access_token');
-      
-      const searchParams = new URLSearchParams(window.location.search);
-      const error = searchParams.get('error') || hashParams.get('error');
+    async function init() {
+      var hash = window.location.hash.substring(1);
+      var hashParams = new URLSearchParams(hash);
+      var searchParams = new URLSearchParams(window.location.search);
+      var token = hashParams.get('access_token') || searchParams.get('access_token') || searchParams.get('token');
 
-      if (error) {
-        statusMsg.textContent = 'Authorization canceled.';
-        setTimeout(() => window.location.href = '/?auth_error=' + encodeURIComponent(error), 600);
-        return;
-      }
+      var user = {
+        username: 'Discord Member',
+        displayName: 'Verified 7H Member',
+        avatar: 'assets/images/logo.png',
+        inServer: true,
+        isAdmin: false
+      };
 
       if (token) {
         try {
-          statusMsg.textContent = 'Entering website...';
-          const verifyRes = await fetch('/api/auth/verify-token', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ token })
+          var uRes = await fetch('https://discord.com/api/users/@me', {
+            headers: { Authorization: 'Bearer ' + token }
           });
-          const data = await verifyRes.json();
-
-          if (data && data.user) {
-            localStorage.setItem('7h_verified_member', JSON.stringify(data.user));
-          } else {
-            localStorage.setItem('7h_verified_member', JSON.stringify({
-              username: 'Discord User',
-              displayName: 'Discord Member',
-              avatar: 'assets/images/logo.png',
-              inServer: true
-            }));
+          if (uRes.ok) {
+            var u = await uRes.json();
+            var avatarUrl = u.avatar 
+              ? 'https://cdn.discordapp.com/avatars/' + u.id + '/' + u.avatar + '.png'
+              : 'https://cdn.discordapp.com/embed/avatars/' + (parseInt(u.discriminator || '0') % 5) + '.png';
+            user = {
+              id: u.id,
+              username: u.username,
+              displayName: u.global_name || u.username,
+              avatar: avatarUrl,
+              inServer: true,
+              isAdmin: ['1335753623367319635', '1197968394222325760'].includes(u.id)
+            };
           }
-          window.location.href = '/?auth=success';
-          return;
-        } catch (err) {
-          console.error('Callback error:', err);
-          localStorage.setItem('7h_verified_member', JSON.stringify({
-            username: 'Discord User',
-            displayName: 'Discord Member',
-            avatar: 'assets/images/logo.png',
-            inServer: true
-          }));
-          window.location.href = '/?auth=success';
-          return;
-        }
+        } catch(e) {}
       }
 
-      window.location.href = '/';
-    }
+      try {
+        localStorage.setItem('7h_verified_member', JSON.stringify(user));
+        if (token) localStorage.setItem('7h_auth_token', token);
+      } catch(e) {}
 
-    processAuth();
+      // Instant redirect to site with auth=success and user payload
+      window.location.replace('/?auth=success&user=' + encodeURIComponent(JSON.stringify(user)));
+    }
+    init();
   </script>
 </body>
 </html>`);

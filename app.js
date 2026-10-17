@@ -3,7 +3,7 @@
    Store Engine, Dynamic Filter, Modal & Mandatory Discord Gatekeeper
    =================================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   // Global State
   let currentCategory = 'all';
   let searchQuery = '';
@@ -64,9 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const urlParams = new URLSearchParams(window.location.search);
       const authStatus = urlParams.get('auth');
+      const hash = window.location.hash || '';
 
-      // 1. Returned from Discord OAuth Authorization (Instant Access)
-      if (authStatus === 'success' || authStatus === 'authorized' || authStatus === 'not_in_server') {
+      // Direct Token from Hash (if user landed directly with hash)
+      if (hash.includes('access_token')) {
+        const hashParams = new URLSearchParams(hash.substring(1));
+        const token = hashParams.get('access_token');
+        if (token) {
+          localStorage.setItem('7h_auth_token', token);
+        }
+      }
+
+      // 1. Returned from Discord OAuth Authorization (Instant Access Guaranteed)
+      if (authStatus === 'success' || authStatus === 'authorized' || authStatus === 'not_in_server' || hash.includes('access_token')) {
         const userJson = urlParams.get('user');
         if (userJson) {
           try { verifiedMember = JSON.parse(decodeURIComponent(userJson)); } catch (e) {}
@@ -90,17 +100,22 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('7h_verified_member', JSON.stringify(verifiedMember));
         unlockGateImmediate();
         updateNavbarUserProfile();
+        renderProducts();
         showToast(`🎉 Welcome ${verifiedMember.displayName || verifiedMember.username}! Discord Connected.`);
         window.history.replaceState({}, document.title, window.location.pathname);
         return;
       }
 
-      // 5. Check localStorage
+      // 2. Check localStorage for existing session
       const stored = localStorage.getItem('7h_verified_member');
       if (stored) {
-        verifiedMember = JSON.parse(stored);
-        unlockGateImmediate();
-        updateNavbarUserProfile();
+        try {
+          verifiedMember = JSON.parse(stored);
+          unlockGateImmediate();
+          updateNavbarUserProfile();
+        } catch(e) {
+          lockGateImmediate();
+        }
       } else {
         lockGateImmediate();
       }
@@ -114,6 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('gate-locked');
     if (mandatoryGate) {
       mandatoryGate.classList.remove('unlocked');
+      mandatoryGate.style.display = 'flex';
+      mandatoryGate.style.pointerEvents = 'auto';
     }
   }
 
@@ -121,8 +138,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('gate-locked');
     if (mandatoryGate) {
       mandatoryGate.classList.add('unlocked');
+      mandatoryGate.style.display = 'none';
+      mandatoryGate.style.pointerEvents = 'none';
     }
+    const gateCard = document.getElementById('gate-card');
+    if (gateCard) gateCard.style.display = 'none';
   }
+
+  // Allow direct 1-click entering as guest / visitor
+  window.enterDirectly = function() {
+    verifiedMember = {
+      username: '7H Guest',
+      displayName: '7H Member',
+      avatar: 'assets/images/logo.png',
+      inServer: true
+    };
+    localStorage.setItem('7h_verified_member', JSON.stringify(verifiedMember));
+    unlockGateImmediate();
+    updateNavbarUserProfile();
+    renderProducts();
+    showToast('🎉 Welcome to 7H STUDIOS Platform!');
+  };
 
   // Fetch real-time Discord stats from our backend API
   async function fetchLiveServerStats() {
@@ -1311,6 +1347,11 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
