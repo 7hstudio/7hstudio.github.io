@@ -675,12 +675,13 @@ const requestHandler = async (req, res) => {
 
 };
 
-if (!process.env.VERCEL) {
+if (require.main === module) {
   const server = http.createServer(requestHandler);
   server.listen(PORT, () => {
     console.log(`🌐 7H STUDIOS Web App with Direct OAuth2 Login running at: http://localhost:${PORT}`);
   });
 }
+
 
 module.exports = requestHandler;
 
