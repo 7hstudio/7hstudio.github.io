@@ -2,8 +2,9 @@
   "name": "7h-studios-web",
   "version": "1.0.0",
   "description": "7H STUDIOS Official FiveM Web Platform with Discord OAuth2 & Gatekeeper",
-  "dependencies": {
-    "dotenv": "^16.4.5"
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
   },
   "engines": {
     "node": ">=18.0.0"
