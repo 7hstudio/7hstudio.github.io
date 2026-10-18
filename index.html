@@ -1,109 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7H STUDIO • Premium FiveM Scripts, Maps, Weapons & Hosting</title>
-  <meta name="description" content="Discover premium FiveM scripts, custom MLO maps, exclusive weapon packs, and high-performance hosting from 7H STUDIO. Elevate your GTA V server today.">
-  <meta name="keywords" content="FiveM, GTA V, FiveM Scripts, FiveM Maps, FiveM Weapons, FiveM Hosting, 7H Studio, Anti Dump, MLO Arena">
-  
+  <title>7H STUDIO • Next-Gen FiveM Scripts, Maps & Digital Ecosystem</title>
+  <meta name="description" content="Discover premium FiveM scripts, custom MLO maps, exclusive weapon packs, and digital services from 7H STUDIO. 0.00ms optimization and real-time Discord integration.">
+  <meta name="keywords" content="FiveM, GTA V, FiveM Scripts, FiveM Maps, FiveM Weapons, 7H Studio, Anti Dump, MLO Arena, Discord Nitro">
+
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
   
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheet -->
+  <!-- Master Stylesheet -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- ===================================================================
-       OPTIONAL DISCORD VERIFICATION & MEMBER DISCOUNT MODAL
-       =================================================================== -->
-  <div class="mandatory-gate-overlay" id="mandatory-gate" style="display: none;">
-    <div class="gate-scanlines"></div>
-    <div class="gate-glow-fx"></div>
-    
-    <div class="gate-card" id="gate-card">
-      <div class="gate-shield-header">
-        <div class="gate-logo-duo">
-          <img src="/assets/images/logo.png" alt="7H STUDIO" class="gate-brand-logo" onerror="this.onerror=null; this.src='https://cdn.discordapp.com/icons/1418023065560023052/25928d432364d26f5f68fdf8bd44cbaf.png?size=1024';">
-          <div class="gate-lock-icon-wrap">
-            <svg class="gate-lock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
-          </div>
-          <div class="gate-discord-logo">
-            <svg viewBox="0 0 24 24" fill="#fff" width="28" height="28">
-              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-            </svg>
-          </div>
-        </div>
 
-        <div class="gate-security-badge">
-          <span class="gate-dot"></span>
-          <span>SECURITY CHECKPOINT • 7H STUDIO</span>
-        </div>
-
-        <h1 class="gate-title">AUTHORIZE DISCORD TO ENTER</h1>
-        <p class="gate-desc">
-          To prevent unauthorized scraping and unlock exclusive member perks, you must verify your active membership in the <strong>7H STUDIO</strong> Discord server.
-        </p>
-      </div>
-
-      <!-- Live Server Status Bar inside Gate -->
-      <div class="gate-server-status">
-        <span class="status-indicator-live"></span>
-        <span>7H STUDIO Discord: <strong>708 Members</strong> (<strong>77 Online</strong>)</span>
-      </div>
-
-      <!-- Verification inside Gate -->
-      <div class="gate-body">
-        <!-- Result Box for Success or Not-in-server Notice -->
-        <div class="gate-result-box" id="gate-result-box" style="display: none;"></div>
-
-        <!-- Direct Discord OAuth Action -->
-        <div class="gate-auth-action-wrap">
-          <a href="/api/auth/discord" class="btn btn-discord btn-large btn-block gate-hero-btn" id="btn-oauth-gate">
-            <svg class="discord-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-            </svg>
-            <span>Authorize & Login with Discord</span>
-          </a>
-
-          <button type="button" class="btn btn-emerald btn-block" style="margin-top: 0.85rem; padding: 0.85rem 1.5rem; font-size: 0.95rem; font-weight: 700; border-radius: 12px; box-shadow: 0 0 25px rgba(16, 185, 129, 0.3); cursor: pointer;" onclick="enterDirectly()">
-            <span>⚡ Enter Store Directly as Guest</span>
-          </button>
-
-          <div class="gate-features-row">
-            <div class="gate-feature-item">
-              <span class="gate-feat-icon">⚡</span>
-              <span>1-Click Instant Login</span>
-            </div>
-            <div class="gate-feature-item">
-              <span class="gate-feat-icon">🛡</span>
-              <span>7H Member Protected</span>
-            </div>
-            <div class="gate-feature-item">
-              <span class="gate-feat-icon">🎁</span>
-              <span>10% VIP Discount</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- Ambient Glowing Orbs & Mesh Backdrop -->
+  <div class="ambient-bg">
+    <div class="ambient-orb orb-purple"></div>
+    <div class="ambient-orb orb-cyan"></div>
+    <div class="ambient-orb orb-violet"></div>
   </div>
+  <div class="grid-mesh-overlay"></div>
 
-  <!-- Ambient Glow Background Effects -->
-  <div class="ambient-glow glow-top"></div>
-  <div class="ambient-glow glow-bottom"></div>
-
-  <!-- Navigation Bar -->
+  <!-- ===================================================================
+       1. STICKY GLASS NAVBAR
+       =================================================================== -->
   <header class="navbar" id="main-navbar">
     <div class="nav-container">
+      
+      <!-- Brand Logo -->
       <a href="#home" class="nav-brand" id="brand-logo-link">
         <div class="logo-wrapper">
           <img src="/assets/images/logo.png" alt="7H STUDIO Logo" class="brand-logo" onerror="this.onerror=null; this.src='https://cdn.discordapp.com/icons/1418023065560023052/25928d432364d26f5f68fdf8bd44cbaf.png?size=1024';">
@@ -114,934 +43,553 @@
         </div>
       </a>
 
+      <!-- Navigation Links -->
       <nav class="nav-menu" id="nav-menu">
         <a href="#home" class="nav-link active" id="nav-link-home">Home</a>
+        <a href="#features" class="nav-link" id="nav-link-features">Features</a>
         <a href="#store" class="nav-link" id="nav-link-store">Store & Catalog</a>
         <a href="#store" class="nav-link" id="nav-link-subs" onclick="filterCategory('Subscriptions')">💎 Subscriptions</a>
-        <a href="#store" class="nav-link" id="nav-link-lobbies" onclick="filterCategory('Lobbies')">VIP Lobbies</a>
-        <a href="#free-hub" class="nav-link" id="nav-link-free">Free Resources</a>
-        <a href="#services" class="nav-link" id="nav-link-services">Services</a>
-        <a href="#partners" class="nav-link" id="nav-link-partners">Partners</a>
-        <a href="#discord-section" class="nav-link" id="nav-link-community">Community</a>
+        <a href="#store" class="nav-link" id="nav-link-free" onclick="filterCategory('Free')">Free Assets</a>
+        <a href="#trust" class="nav-link" id="nav-link-community">Community</a>
       </nav>
 
+      <!-- Search & Actions -->
       <div class="nav-actions">
         <div class="search-box">
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="text" id="header-search-input" placeholder="Search scripts, maps...">
+          <input type="text" id="header-search-input" placeholder="Search 45+ assets...">
         </div>
-        
-        <!-- Admin Panel Access Button (Exclusively displayed to authorized Discord IDs) -->
-        <button class="btn btn-admin-nav" id="btn-admin-nav" style="display: none;" onclick="openAdminPanel()">
-          <span class="admin-pulse-dot"></span>
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
-          </svg>
-          <span>Admin Panel</span>
+
+        <!-- Admin Access Button -->
+        <button class="btn btn-frosted" id="btn-admin-nav" style="display: none; padding: 0.5rem 1rem;" onclick="openAdminPanel()">
+          <span class="online-beacon" style="background:#a855f7;"></span>
+          <span style="font-size:0.8rem;">Admin</span>
         </button>
 
-        <!-- Auth Container (Switches between Connect Discord and User Profile) -->
+        <!-- Discord Verification Action -->
         <div id="nav-auth-container">
-          <button class="btn btn-discord" id="btn-login-discord" onclick="openGateManual()">
-            <svg class="discord-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-            </svg>
-            <span class="discord-btn-text">Verify Discord</span>
-            <span class="online-indicator" title="Server Active"></span>
-          </button>
+          <a href="https://discord.gg/7h" target="_blank" class="btn btn-electric" id="btn-login-discord" style="text-decoration:none;">
+            <i class="fa-brands fa-discord"></i>
+            <span>Discord Server</span>
+            <span class="online-beacon"></span>
+          </a>
         </div>
 
-        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle Navigation">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle Navigation" onclick="toggleMobileNav()">
           <span></span><span></span><span></span>
         </button>
+
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section" id="home">
-    <div class="hero-bg-overlay">
-      <img src="assets/images/hero_banner.jpg" alt="7H Studio FiveM World" class="hero-banner-img">
-      <div class="hero-gradient-mask"></div>
-    </div>
-
-    <div class="hero-content container">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        <span>7H STUDIO • OFFICIAL FIVEM MARKETPLACE</span>
+  <!-- ===================================================================
+       2. HERO SECTION (AWWWARDS STAGE)
+       =================================================================== -->
+  <section class="hero-stage" id="home">
+    <div class="container hero-layout">
+      
+      <!-- Version Pill Badge -->
+      <div class="version-badge">
+        <i class="fa-solid fa-bolt-lightning"></i>
+        <span>7H STUDIO 2.0 • AWARDS REDESIGN ACTIVE</span>
       </div>
 
-      <h1 class="hero-title">
-        ELEVATE YOUR FIVEM SERVER TO <span class="gradient-text">THE NEXT LEVEL</span>
+      <!-- Monumental Headline -->
+      <h1 class="hero-headline">
+        THE NEXT-GEN FIVEM<br>
+        <span class="hero-gradient-text">DIGITAL ECOSYSTEM</span>
       </h1>
 
-      <p class="hero-description">
-        Access elite standalone & framework scripts, custom MLO arenas, HD weapons packs, high-performance RDP hosting, and tailored GTA V development services.
+      <!-- Subline -->
+      <p class="hero-subline">
+        Engineered with <strong>0.00ms resmon</strong> standards. Access elite standalone FiveM scripts, custom MLO arenas, HD weapons packs, and official digital subscriptions with real-time Discord synchronization.
       </p>
 
-      <div class="hero-cta-group">
-        <a href="#store" class="btn btn-primary btn-large" id="btn-hero-explore">
-          <span>Explore Store</span>
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+      <!-- Dual Action Buttons -->
+      <div class="hero-cta-duo">
+        <a href="#store" class="btn btn-electric btn-large" id="btn-hero-explore">
+          <i class="fa-solid fa-fire"></i>
+          <span>Explore Catalog (45+ Assets)</span>
+          <i class="fa-solid fa-arrow-right"></i>
         </a>
-        <a href="#services" class="btn btn-glass btn-large">
-          <span>Custom Services</span>
+        <a href="https://discord.gg/7h" target="_blank" class="btn btn-frosted btn-large">
+          <i class="fa-brands fa-discord" style="color:#5865F2;"></i>
+          <span>Join Community (708 Members)</span>
         </a>
       </div>
 
-      <!-- Quick Stats Counter Strip -->
-      <div class="hero-stats-strip">
-        <div class="stat-card">
-          <span class="stat-value" id="stat-total-members">708</span>
-          <span class="stat-label">Community Members</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-card">
-          <span class="stat-value" id="stat-online-members">77+</span>
-          <span class="stat-label">Online Now</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-card">
-          <span class="stat-value">0.00ms</span>
-          <span class="stat-label">Resmon Optimized</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-card">
-          <span class="stat-value">10% OFF</span>
-          <span class="stat-label">Discord Member Perk</span>
+      <!-- Hero 3D Stage / Mockup Presentation -->
+      <div class="hero-mockup-wrapper">
+        <div class="mockup-aura"></div>
+        <div class="hero-mockup-card">
+          
+          <div class="mockup-window-bar">
+            <div class="window-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="window-title">7H BEATSTORM 3D • AUDIO ENGINE PREVIEW</div>
+            <div class="window-pills">
+              <span class="window-pill">0.00ms IDLE</span>
+              <span class="window-pill">HRTF 3D</span>
+            </div>
+          </div>
+
+          <div class="mockup-stage-content">
+            <div class="mockup-teaser-info">
+              <span class="teaser-chip"><i class="fa-solid fa-sparkles"></i> REVOLUTIONARY RELEASE</span>
+              <h2 class="teaser-title">7H BeatStorm 3D • PartyBox Pro</h2>
+              <p class="teaser-desc">
+                The most advanced boombox in FiveM history: real-time wall occlusion (muffled party sound behind walls), physical burnable cassette tapes in inventory, and vehicle party trunk docking with bass-synced lighting!
+              </p>
+              <div class="teaser-tags">
+                <span class="teaser-tag"># QBCore & Qbox</span>
+                <span class="teaser-tag"># ox_target</span>
+                <span class="teaser-tag"># Wall Occlusion</span>
+                <span class="teaser-tag"># Mixtapes</span>
+                <span class="teaser-tag"># Party Trunk</span>
+              </div>
+            </div>
+
+            <div class="mockup-interactive-visual">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--neon-cyan); font-weight: 700;">
+                  <i class="fa-solid fa-chart-simple"></i> LIVE ACOUSTIC SPECTRUM
+                </span>
+                <span class="window-pill" style="font-size: 0.62rem;">142 BPM</span>
+              </div>
+
+              <!-- Animated Equalizer Bars -->
+              <div class="audio-bars-demo">
+                <div class="audio-bar" style="height: 45%;"></div>
+                <div class="audio-bar" style="height: 75%;"></div>
+                <div class="audio-bar" style="height: 30%;"></div>
+                <div class="audio-bar" style="height: 90%;"></div>
+                <div class="audio-bar" style="height: 60%;"></div>
+                <div class="audio-bar" style="height: 100%;"></div>
+                <div class="audio-bar" style="height: 40%;"></div>
+                <div class="audio-bar" style="height: 80%;"></div>
+                <div class="audio-bar" style="height: 55%;"></div>
+                <div class="audio-bar" style="height: 95%;"></div>
+                <div class="audio-bar" style="height: 35%;"></div>
+                <div class="audio-bar" style="height: 70%;"></div>
+              </div>
+
+              <div class="telemetry-row-mini">
+                <span class="telemetry-key-mini">3D Spatial Pan:</span>
+                <span class="telemetry-val-mini">360° HRTF Active</span>
+              </div>
+              <div class="telemetry-row-mini">
+                <span class="telemetry-key-mini">Sub-Bass 808 Haptic:</span>
+                <span class="telemetry-val-mini">+12dB MegaBass</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
+
+      <!-- Quick Stats Ribbon -->
+      <div class="hero-stats-ribbon">
+        <div class="stat-pill-card">
+          <span class="stat-glow-number" id="stat-total-members">708+</span>
+          <span class="stat-sub-label">Community Members</span>
+        </div>
+        <div class="stat-pill-card">
+          <span class="stat-glow-number">45+</span>
+          <span class="stat-sub-label">FiveM Assets Live</span>
+        </div>
+        <div class="stat-pill-card">
+          <span class="stat-glow-number">0.00ms</span>
+          <span class="stat-sub-label">Average Resmon</span>
+        </div>
+        <div class="stat-pill-card">
+          <span class="stat-glow-number">99.9%</span>
+          <span class="stat-sub-label">System Uptime</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Quick Category Showcase -->
-  <section class="categories-showcase container">
-    <div class="section-header">
-      <span class="section-tag">EXPLORE BY CATEGORY</span>
-      <h2 class="section-title">ENGINEERED FOR FIVEM EXCELLENCE</h2>
-    </div>
-
-    <div class="category-cards-grid">
-      <div class="cat-card" onclick="filterCategory('Scripts')">
-        <div class="cat-card-img" style="background-image: url('assets/images/scripts.jpg');"></div>
-        <div class="cat-card-overlay"></div>
-        <div class="cat-card-body">
-          <span class="cat-pill">Scripts</span>
-          <h3 class="cat-title">FiveM Scripts</h3>
-          <p class="cat-desc">Anti-Dump, Sign Creator 3D, Car Rental, Teleport Menus & more.</p>
-          <span class="cat-link">Browse Scripts &rarr;</span>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="filterCategory('Maps')">
-        <div class="cat-card-img" style="background-image: url('assets/images/maps.jpg');"></div>
-        <div class="cat-card-overlay"></div>
-        <div class="cat-card-body">
-          <span class="cat-pill">MLO Maps</span>
-          <h3 class="cat-title">Arena & Roof Maps</h3>
-          <p class="cat-desc">High-FPS PvP Arenas, combat roofs, RP interiors, and custom arenas.</p>
-          <span class="cat-link">Browse Maps &rarr;</span>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="filterCategory('Lobbies')">
-        <div class="cat-card-img" style="background-image: url('assets/images/lobbies.jpg');"></div>
-        <div class="cat-card-overlay"></div>
-        <div class="cat-card-body">
-          <span class="cat-pill lobbies-pill">VIP MLO</span>
-          <h3 class="cat-title">Spawn Lobbies</h3>
-          <p class="cat-desc">Luxury VIP spawn lobbies V1 to V10 with Halloween & Cyber editions.</p>
-          <span class="cat-link">Browse Lobbies &rarr;</span>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="filterCategory('Guns')">
-        <div class="cat-card-img" style="background-image: url('assets/images/weapons.jpg');"></div>
-        <div class="cat-card-overlay"></div>
-        <div class="cat-card-body">
-          <span class="cat-pill">Weapons</span>
-          <h3 class="cat-title">Weapons Packs</h3>
-          <p class="cat-desc">100 Weapons Pack Guns V1 with custom audio, tracers, and skins.</p>
-          <span class="cat-link">Browse Guns &rarr;</span>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="filterCategory('Free')">
-        <div class="cat-card-img" style="background-image: url('assets/images/lobbies.jpg'); filter: hue-rotate(90deg);"></div>
-        <div class="cat-card-overlay"></div>
-        <div class="cat-card-body">
-          <span class="cat-pill free-pill">100% Free</span>
-          <h3 class="cat-title">Free Resources</h3>
-          <p class="cat-desc">Free lobbies, leaderboards, and community starter assets.</p>
-          <span class="cat-link">Get Free Assets &rarr;</span>
-        </div>
-      </div>
-
-      <div class="cat-card" onclick="filterCategory('Subscriptions')">
-        <div class="cat-card-img" style="background-image: url('https://images.ctfassets.net/4cd45et68cgf/7LrExJ6Kmfa8viAbWKuEZz/c4704a4f31dd132b0336204714fb1430/Netflix-Logo.png'); filter: brightness(0.85);"></div>
-        <div class="cat-card-overlay"></div>
-        <div class="cat-card-body">
-          <span class="cat-pill" style="background: linear-gradient(135deg, #00c6ff, #0072ff); color: white;">Subscriptions</span>
-          <h3 class="cat-title">Digital & AI Subscriptions</h3>
-          <p class="cat-desc">Netflix 4K, ChatGPT Plus, Gemini Pro, Discord Nitro, Spotify & Canva Pro.</p>
-          <span class="cat-link">Browse Subscriptions &rarr;</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Store & Catalog Section -->
-  <section class="store-section" id="store">
-    <div class="container">
-      <div class="store-top-bar">
-        <div>
-          <span class="section-tag">CATALOG & STORE</span>
-          <h2 class="section-title">ALL 7H STUDIO PRODUCTS</h2>
-          <div class="member-perk-hint" id="member-perk-hint">
-            <span class="hint-icon">🎁</span>
-            <span>Verified Server Members receive an automatic <strong>10% Member Discount</strong> on all assets!</span>
-          </div>
-        </div>
-
-        <!-- Filter Controls -->
-        <div class="store-filter-bar">
-          <div class="filter-tabs" id="filter-tabs">
-            <button class="filter-tab active" data-category="all" id="tab-all">All (<span id="count-all">0</span>)</button>
-            <button class="filter-tab" data-category="Subscriptions" id="tab-subscriptions">💎 Subscriptions (<span id="count-subscriptions">0</span>)</button>
-            <button class="filter-tab" data-category="Scripts" id="tab-scripts">Scripts (<span id="count-scripts">0</span>)</button>
-            <button class="filter-tab" data-category="Maps" id="tab-maps">Maps & Arenas (<span id="count-maps">0</span>)</button>
-            <button class="filter-tab" data-category="Lobbies" id="tab-lobbies">Spawn Lobbies (<span id="count-lobbies">0</span>)</button>
-            <button class="filter-tab" data-category="Guns" id="tab-guns">Guns (<span id="count-guns">0</span>)</button>
-            <button class="filter-tab" data-category="Free" id="tab-free">Free Hub (<span id="count-free">0</span>)</button>
-          </div>
-
-          <div class="store-search-sort">
-            <input type="text" id="store-search-input" class="store-search" placeholder="Search product name or feature...">
-            <select id="store-sort-select" class="store-sort">
-              <option value="featured">Featured First</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-              <option value="name-asc">Name: A to Z</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <!-- Products Grid -->
-      <div class="products-grid" id="products-grid">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-
-      <!-- Empty State -->
-      <div class="empty-state" id="empty-state" style="display: none;">
-        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <h3>No products found matching your search</h3>
-        <p>Try clearing your search query or selecting a different category.</p>
-        <button class="btn btn-primary" onclick="resetFilters()">Reset All Filters</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Free Downloads Highlight Hub -->
-  <section class="free-hub-section" id="free-hub">
-    <div class="container">
-      <div class="free-hub-box">
-        <div class="free-hub-content">
-          <span class="section-tag free-tag">COMMUNITY PERK</span>
-          <h2 class="free-hub-title">DOWNLOAD FREE FIVEM ASSETS</h2>
-          <p class="free-hub-desc">
-            We support the FiveM development community! Verified members of the 7H STUDIO Discord can download free lobbies, leaderboard scripts, and resource packs directly with zero cost.
-          </p>
-          <ul class="free-features-list">
-            <li>✔ Free New Lobbies for PvP & RP servers</li>
-            <li>✔ Full Leaderboard UI with scoreboard integration</li>
-            <li>✔ Tested 0.00ms resmon impact</li>
-            <li>✔ Community support in our Discord</li>
-          </ul>
-          <div class="free-hub-actions">
-            <button class="btn btn-emerald btn-large" onclick="filterCategory('Free')">
-              <span>View Free Catalog</span>
-            </button>
-            <a href="https://discord.gg" target="_blank" rel="noopener noreferrer" class="btn btn-discord btn-large">
-              <span>Join Discord for Full Perks</span>
-            </a>
-          </div>
-        </div>
-        <div class="free-hub-visual">
-          <div class="free-card-preview">
-            <img src="assets/images/maps.jpg" alt="Free FiveM Asset" class="free-preview-img">
-            <div class="free-badge-float">100% FREE</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Custom Services Section -->
-  <section class="services-section" id="services">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">CUSTOM SOLUTIONS</span>
-        <h2 class="section-title">PROFESSIONAL FIVEM SERVICES</h2>
-        <p class="section-subtitle">Need tailored development, dedicated infrastructure, or base sales? We provide end-to-end studio solutions.</p>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-              <line x1="6" y1="6" x2="6.01" y2="6"></line>
-              <line x1="6" y1="18" x2="6.01" y2="18"></line>
-            </svg>
-          </div>
-          <h3 class="service-title">High-Performance RDP & Hosting</h3>
-          <p class="service-desc">Ultra-fast AMD Ryzen & Intel Xeon dedicated servers, advanced Anti-DDoS game mitigation, and 99.9% uptime for serious FiveM servers.</p>
-          <button class="btn btn-outline" onclick="openOrderModal('Hosting & RDP Service', 'Contact in ticket for plan options')">Inquire Hosting</button>
-        </div>
-
-        <div class="service-card highlighted">
-          <div class="service-badge">POPULAR</div>
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-              <path d="M2 17l10 5 10-5"></path>
-              <path d="M2 12l10 5 10-5"></path>
-            </svg>
-          </div>
-          <h3 class="service-title">Buy & Sell PvP / RP Bases</h3>
-          <p class="service-desc">Have a completed PvP or RP base to cash out? Or looking for a fully-configured turn-key FiveM server base? We buy and sell verified bases instantly.</p>
-          <button class="btn btn-primary" onclick="openOrderModal('PvP / RP Server Base Service', 'Sell or Buy complete FiveM base')">Open Base Ticket</button>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-              <line x1="12" y1="22.08" x2="12" y2="12"></line>
-            </svg>
-          </div>
-          <h3 class="service-title">3D Model Fix & Decryption</h3>
-          <p class="service-desc">Specialized 3D Fixer bot, collision debugging, YDR/YTD texture optimization, and model decryption services to ensure flawless gameplay.</p>
-          <button class="btn btn-outline" onclick="openOrderModal('3D Fixer & Decrypt', 'Custom 3D model repair and fixes')">Request 3D Service</button>
-        </div>
-      </div>
-    </div>
   <!-- ===================================================================
-       OFFICIAL PARTNERS PANEL & ALLIANCES SECTION
+       3. BENTO GRID SECTION (FEATURE ARCHITECTURE)
        =================================================================== -->
-  <section class="partners-section" id="partners">
+  <section class="bento-section" id="features">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">🤝 OFFICIAL NETWORK & ALLIANCES</span>
-        <h2 class="section-title">OUR TRUSTED FIVEM PARTNERS</h2>
-        <p class="section-subtitle">
-          Collaborating with premier FiveM development studios, Arabic & international gaming communities, resource vaults, and trusted servers.
-        </p>
+      
+      <div class="section-head">
+        <span class="section-eyebrow">ARCHITECTURAL INNOVATION</span>
+        <h2 class="section-headline">BUILT WITHOUT COMPROMISE</h2>
+        <p class="section-subtext">Discover why server owners trust 7H STUDIO to power high-population FiveM servers.</p>
       </div>
 
-      <!-- Partner Category Filter Tabs -->
-      <div class="partner-filter-bar">
-        <div class="partner-filter-tabs">
-          <button class="partner-filter-tab active" data-category="all" onclick="filterPartnerCategory('all')">
-            <span>All Partners</span>
-            <span class="partner-count-badge" id="partner-count-all">15</span>
-          </button>
-          <button class="partner-filter-tab" data-category="dev" onclick="filterPartnerCategory('dev')">
-            <span>Development & Studios</span>
-            <span class="partner-count-badge" id="partner-count-dev">3</span>
-          </button>
-          <button class="partner-filter-tab" data-category="resources" onclick="filterPartnerCategory('resources')">
-            <span>Resources & Vaults</span>
-            <span class="partner-count-badge" id="partner-count-resources">6</span>
-          </button>
-          <button class="partner-filter-tab" data-category="community" onclick="filterPartnerCategory('community')">
-            <span>Communities & Hubs</span>
-            <span class="partner-count-badge" id="partner-count-community">2</span>
-          </button>
-          <button class="partner-filter-tab" data-category="servers" onclick="filterPartnerCategory('servers')">
-            <span>Gaming & Stores</span>
-            <span class="partner-count-badge" id="partner-count-servers">4</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Partners Grid -->
-      <div class="partners-grid" id="partners-grid">
-        <!-- Rendered dynamically by app.js from partners.js -->
-      </div>
-
-      <!-- Partnership Application Card -->
-      <div class="partnership-cta-card">
-        <div class="partner-cta-info">
-          <div class="partner-cta-badge">
-            <span class="pulse-dot"></span>
-            <span>GROW WITH 7H STUDIO</span>
-          </div>
-          <h3 class="partner-cta-title">Want to become an Official Partner?</h3>
-          <p class="partner-cta-desc">
-            Promote your FiveM server, development studio, or gaming brand to over <strong>700+ active members and server owners</strong>. Exchange partnerships and get featured in our official Discord & website.
-          </p>
-        </div>
-        <div class="partner-cta-action">
-          <a href="https://discord.gg" target="_blank" rel="noopener noreferrer" class="btn btn-discord btn-large">
-            <svg class="discord-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-            </svg>
-            <span>Apply in Discord Ticket</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Discord & Community Hub Section -->
-  <section class="discord-section" id="discord-section">
-    <div class="container">
-      <div class="discord-banner-card">
-        <div class="discord-banner-info">
-          <div class="discord-logo-large">
-            <img src="assets/images/logo.png" alt="7H Studio Discord Server" class="discord-avatar" onerror="this.src='assets/images/hero_banner.jpg'">
-            <span class="discord-pulse-dot"></span>
-          </div>
-          <div class="discord-text">
-            <span class="discord-tag">OFFICIAL COMMUNITY</span>
-            <h2 class="discord-title">JOIN 7H STUDIO DISCORD</h2>
-            <p class="discord-desc">
-              Connect with <strong><span id="discord-member-counter">708</span></strong> members, receive instant script updates, get rapid ticket support, and participate in exclusive giveaways.
+      <div class="bento-grid">
+        
+        <!-- Bento Card 1: 0.00ms Optimization (2 cols) -->
+        <div class="bento-card bento-col-2">
+          <div>
+            <div class="bento-icon-badge">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h3 class="bento-card-title">0.00ms Event-Driven Architecture</h3>
+            <p class="bento-card-desc">
+              Every single script is engineered to sleep at zero resource consumption when inactive. We use modern <code>ox_target</code> and <code>ox_lib</code> hooks to eliminate unnecessary client tick loops, tested under 120-player stress tests with buttery-smooth FPS.
             </p>
           </div>
+          <div class="bento-visual-preview">
+            <div style="display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.75rem;">
+              <span style="color:var(--text-secondary);">Resmon Monitor:</span>
+              <span style="color:var(--neon-emerald); font-weight:700;">● 0.00ms (120 Players Active)</span>
+            </div>
+          </div>
         </div>
 
-        <div class="discord-banner-cta">
-          <a href="https://discord.gg" target="_blank" rel="noopener noreferrer" class="btn btn-discord btn-large" id="btn-discord-join-large">
-            <svg class="discord-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-            </svg>
-            <span>Open Discord Community</span>
-          </a>
-          <span class="subtext">Instant ticket support active 24/7</span>
+        <!-- Bento Card 2: 3D Spatial Audio (1 col) -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-icon-badge" style="color:var(--neon-cyan); border-color:rgba(6,182,212,0.3); box-shadow:0 0 15px var(--neon-cyan-glow);">
+              <i class="fa-solid fa-headphones"></i>
+            </div>
+            <h3 class="bento-card-title">3D Spatial Audio & Wall Occlusion</h3>
+            <p class="bento-card-desc">
+              Next-generation HRTF acoustic engines. Music muffles realistically behind walls and building doors for genuine club & street party immersion.
+            </p>
+          </div>
+          <div style="margin-top:1rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--neon-cyan);">
+            ✔ Lowpass Biquad 380Hz Filter
+          </div>
         </div>
+
+        <!-- Bento Card 3: Party Trunk Mode (1 col) -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-icon-badge" style="color:#ec4899; border-color:rgba(236,72,153,0.3); box-shadow:0 0 15px rgba(236,72,153,0.4);">
+              <i class="fa-solid fa-car"></i>
+            </div>
+            <h3 class="bento-card-title">Party Trunk Mode</h3>
+            <p class="bento-card-desc">
+              Dock sound systems directly into vehicle boots. Vehicle brake lights and neon underglow strobe in sync with the heavy 808 sub-bass drops!
+            </p>
+          </div>
+          <div style="margin-top:1rem; font-family:var(--font-mono); font-size:0.75rem; color:#ec4899;">
+            ✔ Light Strobe Synchronization
+          </div>
+        </div>
+
+        <!-- Bento Card 4: Discord Real-Time Auto-Sync (1 col) -->
+        <div class="bento-card">
+          <div>
+            <div class="bento-icon-badge" style="color:#5865F2; border-color:rgba(88,101,242,0.3); box-shadow:0 0 15px rgba(88,101,242,0.4);">
+              <i class="fa-brands fa-discord"></i>
+            </div>
+            <h3 class="bento-card-title">Real-Time Discord Auto-Sync</h3>
+            <p class="bento-card-desc">
+              Whenever our team drops a new script, MLO map, or weapon pack in Discord, it is instantly processed and published on the website in real time.
+            </p>
+          </div>
+          <div style="margin-top:1rem; font-family:var(--font-mono); font-size:0.75rem; color:#5865F2;">
+            ✔ Zero Delay Live Updates
+          </div>
+        </div>
+
+        <!-- Bento Card 5: Member Discount (2 cols) -->
+        <div class="bento-card bento-col-2">
+          <div>
+            <div class="bento-icon-badge" style="color:var(--neon-amber); border-color:rgba(245,158,11,0.3); box-shadow:0 0 15px rgba(245,158,11,0.4);">
+              <i class="fa-solid fa-gift"></i>
+            </div>
+            <h3 class="bento-card-title">Community First: Free Lobbies & 10% Member Perks</h3>
+            <p class="bento-card-desc">
+              We empower creators and server owners. Verified Discord members get an automatic 10% discount on all store items plus instant access to free VIP lobbies, leaderboards, and map packs!
+            </p>
+          </div>
+          <div class="bento-visual-preview">
+            <div style="display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.75rem;">
+              <span style="color:var(--text-secondary);">Discount System:</span>
+              <span style="color:var(--neon-amber); font-weight:700;">🎁 10% Member Discount Active</span>
+            </div>
+          </div>
+        </div>
+
       </div>
+
     </div>
   </section>
 
-  <!-- Product Detail Modal -->
-  <div class="modal-backdrop" id="product-modal-backdrop" onclick="closeModal(event)">
-    <div class="modal-card" id="product-modal-card">
-      <button class="modal-close-btn" onclick="closeModalDirect()" aria-label="Close modal">&times;</button>
+  <!-- ===================================================================
+       4. STORE & SHOWCASE SECTION
+       =================================================================== -->
+  <section class="store-section" id="store">
+    <div class="container">
       
-      <div class="modal-grid">
-        <div class="modal-gallery">
-          <div class="modal-main-img-wrapper">
-            <img src="" alt="Product Detail Preview" id="modal-main-img">
-            <span class="modal-price-badge" id="modal-price-badge">$0</span>
-          </div>
+      <div class="section-head">
+        <span class="section-eyebrow">OFFICIAL CATALOG</span>
+        <h2 class="section-headline">EXPLORE 7H STUDIO PRODUCTS</h2>
+        <p class="section-subtext">Instant delivery, lifetime updates, and rapid Discord ticket support 24/7.</p>
+      </div>
+
+      <!-- Category Filter Pills Bar -->
+      <div class="filter-bar-sticky">
+        <div class="category-pills-list">
+          <button class="cat-filter-btn active" data-category="all" onclick="filterCategory('all')">All Products</button>
+          <button class="cat-filter-btn" data-category="Scripts" onclick="filterCategory('Scripts')">Scripts</button>
+          <button class="cat-filter-btn" data-category="Maps" onclick="filterCategory('Maps')">Maps & MLO</button>
+          <button class="cat-filter-btn" data-category="Guns" onclick="filterCategory('Guns')">Weapons</button>
+          <button class="cat-filter-btn" data-category="Lobbies" onclick="filterCategory('Lobbies')">Lobbies</button>
+          <button class="cat-filter-btn" data-category="Subscriptions" onclick="filterCategory('Subscriptions')">💎 Subscriptions</button>
+          <button class="cat-filter-btn" data-category="Free" onclick="filterCategory('Free')">Free Assets</button>
         </div>
 
-        <div class="modal-info">
-          <div class="modal-header">
-            <span class="modal-category" id="modal-category">Scripts</span>
-            <h2 class="modal-title" id="modal-title">Product Title</h2>
-          </div>
-
-          <div class="modal-tags" id="modal-tags"></div>
-
-          <div class="modal-desc-box">
-            <h4>Description & Features</h4>
-            <p id="modal-desc">Detailed product description.</p>
-          </div>
-
-          <div class="modal-highlights">
-            <div class="highlight-item">
-              <span class="highlight-icon">⚡</span>
-              <span>Instant Discord Ticket Delivery</span>
-            </div>
-            <div class="highlight-item">
-              <span class="highlight-icon">🛡️</span>
-              <span>Fully Verified & 0.00ms Tested</span>
-            </div>
-            <div class="highlight-item" id="modal-member-perk-line">
-              <span class="highlight-icon">🏷️</span>
-              <span id="modal-discount-info">Discord Members save 10% on this item</span>
-            </div>
-          </div>
-
-          <div class="modal-actions">
-            <button class="btn btn-primary btn-large" id="modal-order-btn">
-              <span>Order via Discord Ticket</span>
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </button>
-            <button class="btn btn-outline" onclick="copyProductLink()" id="btn-copy-product">
-              <span>Copy Link</span>
-            </button>
-          </div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary);">
+          Showing: <strong id="products-count" style="color: #fff;">45</strong> Assets
         </div>
       </div>
+
+      <!-- Products Cards Grid (Dynamic injection from products.js & /api/products) -->
+      <div class="products-grid" id="products-grid">
+        <!-- Rendered by app.js -->
+      </div>
+      <div class="empty-state" id="empty-state" style="display: none; text-align: center; padding: 4rem 1rem;">
+        <i class="fa-solid fa-box-open" style="font-size: 2.5rem; color: var(--text-tertiary); margin-bottom: 1rem;"></i>
+        <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: #fff;">Aucun produit trouvé</h3>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.4rem;">Essayez une autre recherche ou catégorie.</p>
+      </div>
+
     </div>
-  </div>
+  </section>
 
   <!-- ===================================================================
-       7H STUDIO DISCORD TICKET ORDER MODAL (DIRECT TICKET DISPATCH)
+       5. STATS & TRUST SECTION
        =================================================================== -->
-  <div class="modal-backdrop checkout-modal-backdrop" id="checkout-modal-backdrop" onclick="closeCheckoutModal(event)">
-    <div class="modal-card ticket-order-card" id="checkout-modal-card">
-      <button class="modal-close-btn" onclick="closeCheckoutModalDirect()" aria-label="Close modal">&times;</button>
+  <section class="stats-trust-section" id="trust">
+    <div class="container">
       
-      <div class="ticket-order-header">
-        <div class="ticket-header-duo">
-          <img src="assets/images/logo.png" alt="7H Studio" class="ticket-brand-logo">
-          <div>
-            <h2 class="ticket-order-title">COMMANDE VIA TICKET DISCORD</h2>
-            <span class="ticket-order-sub">7H STUDIO • LIVRAISON & SUPPORT INSTANTANÉ 24/7</span>
+      <div class="trust-banner-card">
+        <div class="section-head" style="margin-bottom: 1.5rem;">
+          <span class="section-eyebrow">COMMUNITY & REPUTATION</span>
+          <h2 class="section-headline">TRUSTED BY FIVEM SERVERS</h2>
+          <p class="section-subtext">Join hundreds of server developers, roleplay communities, and competitive PvP projects.</p>
+        </div>
+
+        <div class="hero-stats-ribbon" style="max-width: 100%;">
+          <div class="stat-pill-card">
+            <span class="stat-glow-number">708+</span>
+            <span class="stat-sub-label">Discord Members</span>
+          </div>
+          <div class="stat-pill-card">
+            <span class="stat-glow-number">100%</span>
+            <span class="stat-sub-label">Direct Ticket Delivery</span>
+          </div>
+          <div class="stat-pill-card">
+            <span class="stat-glow-number">24/7</span>
+            <span class="stat-sub-label">Support Response</span>
+          </div>
+          <div class="stat-pill-card">
+            <span class="stat-glow-number">USD ($)</span>
+            <span class="stat-sub-label">Global Pricing</span>
           </div>
         </div>
-        <div class="ticket-status-pill">
-          <span class="status-indicator-live"></span>
-          <span>Staff Disponible en Ticket</span>
+
+        <div class="partners-strip">
+          <span class="partner-logo-item">⚔️ 7H ARENA PVP</span>
+          <span class="partner-logo-item">⚡ ZERO RESMON</span>
+          <span class="partner-logo-item">🛡️ ANTI-DUMP PRO</span>
+          <span class="partner-logo-item">🌐 CLOUDFLARE TIER 1</span>
         </div>
       </div>
 
-      <div class="ticket-order-content">
-        <!-- Product Summary Box -->
-        <div class="ticket-product-card">
-          <div class="ticket-prod-thumb-wrap">
-            <img src="assets/images/logo.png" alt="Product Preview" id="checkout-prod-thumb" class="ticket-prod-img">
-            <span class="ticket-prod-cat" id="checkout-prod-cat">Script</span>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       6. LUXURY MINIMALIST FOOTER
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <!-- Brand Info -->
+        <div class="footer-col-brand">
+          <div style="display: flex; align-items: center; gap: 0.8rem;">
+            <img src="/assets/images/logo.png" alt="7H STUDIO Logo" style="width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--glass-border-hover);">
+            <span class="brand-title">7H <span class="highlight">STUDIO</span></span>
           </div>
-          <div class="ticket-prod-info">
-            <h3 class="ticket-prod-name" id="checkout-prod-name">Product Name</h3>
-            
-            <div class="ticket-price-box">
-              <div class="ticket-price-row">
-                <span class="price-lbl">Prix de base :</span>
-                <span class="price-val" id="checkout-base-price">$0.00</span>
-              </div>
-              <div class="ticket-price-row discount-row" id="checkout-discount-row">
-                <span class="price-lbl">Réduction Membre VIP :</span>
-                <span class="price-val discount-val" id="checkout-discount-val">-10% ($0.00)</span>
-              </div>
-              <div class="checkout-price-divider"></div>
-              <div class="ticket-price-row total-row">
-                <span class="price-lbl">Total à payer :</span>
-                <div class="price-total-wrap">
-                  <span class="price-total" id="checkout-total-price">$0.00</span>
-                  <span class="price-mad-sub" id="checkout-total-mad">(~0 MAD)</span>
-                </div>
-              </div>
+          <p class="footer-desc">
+            The premier FiveM digital development network. Providing elite scripts, custom MLO maps, exclusive weapon packs, and premium digital subscriptions.
+          </p>
+          <div class="footer-socials">
+            <a href="https://discord.gg/7h" target="_blank" class="footer-social-btn" title="Discord"><i class="fa-brands fa-discord"></i></a>
+            <a href="https://github.com/pesa44508-crypto/7h-studios-web" target="_blank" class="footer-social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#store" class="footer-social-btn" title="Store"><i class="fa-solid fa-cart-shopping"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-col-title">STORE CATALOG</h4>
+          <ul class="footer-links-list">
+            <li><a href="#store" onclick="filterCategory('Scripts')">FiveM Scripts</a></li>
+            <li><a href="#store" onclick="filterCategory('Maps')">Custom MLOs & Arenas</a></li>
+            <li><a href="#store" onclick="filterCategory('Guns')">Weapons Packs</a></li>
+            <li><a href="#store" onclick="filterCategory('Subscriptions')">Digital Subscriptions</a></li>
+            <li><a href="#store" onclick="filterCategory('Free')">Free Community Assets</a></li>
+          </ul>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Bento Features</a></li>
+            <li><a href="#store">Store</a></li>
+            <li><a href="#trust">Trust & Stats</a></li>
+            <li><a href="https://discord.gg/7h" target="_blank">Discord Ticket Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Server & Security Status -->
+        <div>
+          <h4 class="footer-col-title">SYSTEM STATUS</h4>
+          <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+            <div class="footer-status-pill">
+              <span class="online-beacon"></span>
+              <span>Web Engine: 100% Operational</span>
+            </div>
+            <div class="footer-status-pill">
+              <span class="online-beacon" style="background:#a855f7;"></span>
+              <span>Discord Bot: Auto-Sync Online</span>
+            </div>
+            <div class="footer-status-pill">
+              <span class="online-beacon" style="background:#06b6d4;"></span>
+              <span>Cloudflare SSL: Protected</span>
             </div>
           </div>
         </div>
 
-        <!-- Customer Identity Card -->
-        <div class="ticket-customer-bar">
-          <div class="ticket-cust-avatar-wrap">
-            <img src="assets/images/logo.png" alt="Customer Avatar" id="checkout-cust-avatar" class="ticket-cust-avatar">
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 7H STUDIO. All Rights Reserved. Not affiliated with Rockstar Games, Take-Two Interactive, or Cfx.re.</p>
+        <span>Engineered with 💜 for the FiveM Community</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       DISCORD TICKET ORDER MODAL (DIRECT DISPATCH)
+       =================================================================== -->
+  <div class="modal-backdrop" id="checkout-modal-backdrop" onclick="closeCheckoutModal(event)">
+    <div class="modal-card" id="checkout-modal-card">
+      <div style="padding: 1.8rem; display: flex; flex-direction: column; gap: 1.2rem;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--glass-border); padding-bottom: 1rem;">
+          <div style="display: flex; align-items: center; gap: 0.8rem;">
+            <i class="fa-solid fa-ticket neon-purple" style="font-size: 1.5rem;"></i>
+            <div>
+              <h3 style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; color: #fff;">COMMANDE VIA TICKET DISCORD</h3>
+              <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-secondary);">7H STUDIO • LIVRAISON & SUPPORT RAPIDE</span>
+            </div>
           </div>
-          <div class="ticket-cust-info">
-            <div class="ticket-cust-name" id="checkout-cust-name">Client Visiteur</div>
-            <div class="ticket-cust-ref">Référence Commande : <code id="ticket-order-ref-code">#7H-ORD-XXXX</code></div>
-          </div>
-          <span class="ticket-member-badge" id="checkout-cust-badge">⚡ Membre Vérifié</span>
+          <button class="footer-social-btn" onclick="closeCheckoutModal(null, true)"><i class="fa-solid fa-xmark"></i></button>
         </div>
 
-        <!-- Instructions Box -->
-        <div class="ticket-instructions-card">
-          <div class="instructions-title">
-            <span class="inst-icon">📋</span>
-            <strong>Comment acheter ce script en 2 étapes :</strong>
+        <!-- Product Preview Row -->
+        <div style="display: flex; gap: 1rem; align-items: center; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 1rem;">
+          <img id="checkout-prod-thumb" src="/assets/images/logo.png" alt="Product" style="width: 70px; height: 70px; border-radius: 10px; object-fit: cover;">
+          <div style="flex: 1;">
+            <h4 id="checkout-prod-name" style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: #fff;">Nom du Produit</h4>
+            <span id="checkout-prod-cat" style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--neon-cyan);">Category</span>
+            <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.3rem;">
+              <span id="checkout-total-price" style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; color: #fff;">$0.00</span>
+              <span id="checkout-total-mad" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-tertiary);">(0 MAD)</span>
+            </div>
+            <div id="checkout-discount-row" style="display: none; font-size: 0.75rem; color: var(--neon-emerald); font-family: var(--font-mono); margin-top: 2px;">
+              🎁 Réduction Membre 10%: -<span id="checkout-discount-val">$0.00</span>
+            </div>
           </div>
-          <ol class="ticket-steps-list">
-            <li>Cliquez sur le bouton ci-dessous <strong>« 🎫 Ouvrir Ticket d'Achat »</strong> (les détails de votre commande seront copiés automatiquement).</li>
-            <li>Collez le message dans votre ticket sur le Discord <strong>7H STUDIO</strong>. Notre staff vous répondra et vous livrera immédiatement !</li>
+          <div style="text-align: right;">
+            <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-tertiary);">RÉF COMMANDE</span>
+            <div id="ticket-order-ref-code" style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--neon-purple);">#7H-ORD-0000</div>
+          </div>
+        </div>
+
+        <!-- Instructions -->
+        <div style="background: rgba(168, 85, 247, 0.08); border: 1px solid rgba(168, 85, 247, 0.25); border-radius: var(--radius-md); padding: 1rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+          <strong style="color: #fff;"><i class="fa-solid fa-circle-info"></i> Comment ça marche :</strong>
+          <ol style="margin-left: 1.2rem; margin-top: 0.4rem;">
+            <li>Cliquez sur <strong>« Ouvrir Ticket d'Achat »</strong> ci-dessous.</li>
+            <li>Le message de commande sera <strong>copié automatiquement</strong> dans votre presse-papier.</li>
+            <li>Collez-le dans votre ticket sur le Discord <strong>7H STUDIO</strong> pour une livraison immédiate !</li>
           </ol>
         </div>
 
-        <!-- Action Buttons -->
-        <div class="ticket-actions-row">
-          <button type="button" class="btn btn-discord btn-large ticket-cta-btn" id="btn-open-ticket-action" onclick="dispatchDiscordTicketOrder()" style="flex: 2;">
-            <svg class="discord-icon" viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
-              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-            </svg>
-            <span>🎫 Ouvrir Ticket d'Achat</span>
-          </button>
-          
-          <button type="button" class="btn btn-emerald" onclick="copyTicketOrderDetails()" style="flex: 1;">
-            <span>📋 Copier Commande</span>
-          </button>
-
-          <button type="button" class="btn btn-glass" onclick="closeCheckoutModalDirect()">
-            <span>Fermer</span>
-          </button>
-        </div>
+        <!-- Action Button -->
+        <button class="btn btn-electric" id="btn-copy-ticket-order" style="width: 100%; padding: 0.85rem;" onclick="dispatchDiscordTicketOrder()">
+          <i class="fa-brands fa-discord"></i>
+          <span>Ouvrir Ticket d'Achat sur Discord</span>
+        </button>
 
       </div>
-
     </div>
   </div>
 
   <!-- ===================================================================
-       EXECUTIVE ADMIN CONTROL PANEL MODAL (STRICTLY AUTHORIZED DISCORD IDS)
+       PRODUCT DETAILS PREVIEW MODAL
        =================================================================== -->
-  <div class="modal-backdrop admin-modal-backdrop" id="admin-panel-backdrop" onclick="closeAdminModal(event)">
-    <div class="modal-card admin-modal-card" id="admin-modal-card">
-      <button class="modal-close-btn" onclick="closeAdminModalDirect()" aria-label="Close admin modal">&times;</button>
-      
-      <div class="admin-modal-header">
-        <div class="admin-header-title-wrap">
-          <span class="admin-crown-icon">👑</span>
+  <div class="modal-backdrop" id="product-modal-backdrop" onclick="closeProductModal(event)">
+    <div class="modal-card" id="product-modal-card" style="max-width: 780px;">
+      <div style="padding: 1.8rem; display: flex; flex-direction: column; gap: 1.2rem;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span id="modal-category" class="teaser-chip">Category</span>
+          <button class="footer-social-btn" onclick="closeModalDirect()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div style="position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--glass-border);">
+          <img id="modal-main-img" src="" alt="Product Preview" style="width: 100%; height: 100%; object-fit: cover;">
+          <video id="modal-product-video" controls style="display: none; width: 100%; height: 100%; object-fit: cover;"></video>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap;">
           <div>
-            <h2 class="admin-modal-title">EXECUTIVE ADMIN CONTROL PANEL</h2>
-            <span class="admin-session-badge" id="admin-session-text">Authorized Admin Session</span>
+            <h3 id="modal-title" style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: #fff;">Titre du Produit</h3>
+            <p id="modal-desc" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.4rem; max-width: 500px; line-height: 1.6;"></p>
           </div>
-        </div>
-        <div class="admin-quick-status">
-          <span class="status-indicator-live"></span>
-          <span>Discord Bot: <strong>ONLINE</strong></span>
-        </div>
-      </div>
-
-      <!-- Quick Telemetry Cards -->
-      <div class="admin-stats-grid">
-        <div class="admin-stat-card">
-          <span class="stat-lbl">Discord Members</span>
-          <span class="stat-val" id="admin-stat-members">708</span>
-          <span class="stat-sub">77 Online Now</span>
-        </div>
-        <div class="admin-stat-card">
-          <span class="stat-lbl">Catalog Products</span>
-          <span class="stat-val" id="admin-stat-products">27</span>
-          <span class="stat-sub">Active in Store</span>
-        </div>
-        <div class="admin-stat-card">
-          <span class="stat-lbl">Verified Partners</span>
-          <span class="stat-val" id="admin-stat-partners">15</span>
-          <span class="stat-sub">Linked Studios</span>
-        </div>
-        <div class="admin-stat-card">
-          <span class="stat-lbl">System Status</span>
-          <span class="stat-val" style="color:#10b981;">ONLINE</span>
-          <span class="stat-sub" id="admin-stat-domain">Cloudflare Protected</span>
-        </div>
-      </div>
-
-      <!-- Admin Tabs Navigation -->
-      <div class="admin-tab-nav">
-        <button class="admin-tab-btn active" data-tab="broadcast" onclick="switchAdminTab('broadcast')">
-          <span>📢 Discord Announce</span>
-        </button>
-        <button class="admin-tab-btn" data-tab="manage-products" onclick="switchAdminTab('manage-products')">
-          <span>📦 Manage Catalog (Edit/Delete)</span>
-        </button>
-        <button class="admin-tab-btn" data-tab="add-product" onclick="switchAdminTab('add-product')">
-          <span>➕ Add Product</span>
-        </button>
-        <button class="admin-tab-btn" data-tab="add-partner" onclick="switchAdminTab('add-partner')">
-          <span>🤝 Add Partner</span>
-        </button>
-        <button class="admin-tab-btn" data-tab="telemetry" onclick="switchAdminTab('telemetry')">
-          <span>⚙️ System Diagnostics</span>
-        </button>
-      </div>
-
-      <!-- Tab 1: Discord Announce Broadcast -->
-      <div class="admin-tab-pane active" id="tab-broadcast">
-        <div class="admin-form-group">
-          <label class="admin-label">Target Discord Channel:</label>
-          <select class="admin-select" id="admin-announce-channel">
-            <option value="1549470009439420447">📢丨7h-web (General Web Channel)</option>
-            <option value="1549470006805266604">📢丨announcements (Main Server Announcements)</option>
-          </select>
-        </div>
-
-        <div class="admin-form-group">
-          <label class="admin-label">Audience Mention:</label>
-          <select class="admin-select" id="admin-announce-mention">
-            <option value="none">No Mention (Silent)</option>
-            <option value="everyone">@everyone</option>
-            <option value="here">@here</option>
-          </select>
-        </div>
-
-        <div class="admin-form-group">
-          <label class="admin-label">Announcement Title:</label>
-          <input type="text" class="admin-input" id="admin-announce-title" placeholder="e.g. 🔥 NEW FIVEM SCRIPT RELEASED: V2 GANG MLO">
-        </div>
-
-        <div class="admin-form-group">
-          <label class="admin-label">Announcement Content / Description:</label>
-          <textarea class="admin-textarea" id="admin-announce-desc" rows="4" placeholder="Enter your announcement text here..."></textarea>
-        </div>
-
-        <div class="admin-form-group">
-          <label class="admin-label">Embed Highlight Color:</label>
-          <div class="admin-color-picker">
-            <input type="color" id="admin-announce-color" value="#8b5cf6">
-            <span class="color-hint">Purple (Default 7H Brand)</span>
-          </div>
-        </div>
-
-        <button class="btn btn-primary btn-large btn-block" id="btn-send-announcement" onclick="sendAdminAnnouncement()">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="22" y1="2" x2="11" y2="13"></line>
-            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-          </svg>
-          <span>Broadcast Announcement to Discord</span>
-        </button>
-      </div>
-
-      <!-- Tab: Manage Products (Edit / Delete) -->
-      <div class="admin-tab-pane" id="tab-manage-products" style="display: none;">
-        <!-- Live Edit Product Card (Opens smoothly when admin clicks Edit) -->
-        <div class="admin-edit-card" id="admin-edit-prod-card" style="display: none;">
-          <div class="admin-edit-card-header">
-            <div class="admin-edit-header-left">
-              <span class="admin-edit-badge">EDITING ASSET</span>
-              <h3 class="admin-edit-title" id="admin-edit-title-preview">Product Name</h3>
+          <div style="text-align: right;">
+            <div id="modal-price-badge" style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; color: #fff; background: rgba(0,0,0,0.5); padding: 0.4rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--glass-border);">
+              $0.00
             </div>
-            <button class="btn btn-glass btn-sm" onclick="cancelEditProduct()" title="Close edit">✕ Close</button>
-          </div>
-          
-          <input type="hidden" id="admin-edit-id">
-
-          <div class="admin-grid-2col">
-            <div class="admin-form-group">
-              <label class="admin-label">Product Name:</label>
-              <input type="text" class="admin-input" id="admin-edit-name">
-            </div>
-            <div class="admin-form-group">
-              <label class="admin-label">Category:</label>
-              <select class="admin-select" id="admin-edit-cat">
-                <option value="Scripts">Scripts</option>
-                <option value="Maps">Maps & Arenas</option>
-                <option value="Guns">Weapons Packs</option>
-                <option value="Free">Free Downloads</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="admin-grid-2col">
-            <div class="admin-form-group">
-              <label class="admin-label">Price Display:</label>
-              <input type="text" class="admin-input" id="admin-edit-price">
-            </div>
-            <div class="admin-form-group">
-              <label class="admin-label">Tags (comma-separated):</label>
-              <input type="text" class="admin-input" id="admin-edit-tags">
-            </div>
-          </div>
-
-          <div class="admin-form-group">
-            <label class="admin-label">Image URL / Banner:</label>
-            <input type="text" class="admin-input" id="admin-edit-img">
-          </div>
-
-          <div class="admin-form-group">
-            <label class="admin-label">Description & Highlights:</label>
-            <textarea class="admin-textarea" id="admin-edit-desc" rows="3"></textarea>
-          </div>
-
-          <div class="admin-edit-actions">
-            <button class="btn btn-emerald btn-large" style="flex: 2;" onclick="saveEditProduct()">
-              <span>💾 Save Changes to Catalog</span>
-            </button>
-            <button class="btn btn-glass btn-large" style="flex: 1;" onclick="cancelEditProduct()">
-              <span>Cancel</span>
-            </button>
+            <div id="modal-discount-info" style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--neon-emerald); margin-top: 4px;"></div>
           </div>
         </div>
 
-        <!-- Filter & Search Toolbar -->
-        <div class="admin-toolbar">
-          <div class="admin-search-wrap">
-            <input type="text" class="admin-input" id="admin-prod-search" placeholder="🔍 Search product by name or ID..." oninput="filterAdminProductsList()">
-          </div>
-          <select class="admin-select admin-cat-select" id="admin-prod-filter-cat" onchange="filterAdminProductsList()">
-            <option value="all">All Categories</option>
-            <option value="Scripts">Scripts</option>
-            <option value="Maps">Maps & Arenas</option>
-            <option value="Guns">Weapons Packs</option>
-            <option value="Free">Free Downloads</option>
-          </select>
-          <span class="admin-count-pill" id="admin-products-count-pill">0 Products</span>
+        <div id="modal-tags" style="display: flex; gap: 0.5rem; flex-wrap: wrap;"></div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+          <button class="btn btn-frosted" onclick="closeModalDirect()">Fermer</button>
+          <button class="btn btn-electric" id="modal-order-btn">
+            <i class="fa-brands fa-discord"></i> Commander via Ticket
+          </button>
         </div>
 
-        <!-- Products List Container -->
-        <div class="admin-products-table-wrap">
-          <div class="admin-products-list" id="admin-products-list">
-            <!-- Dynamically populated -->
-          </div>
-        </div>
       </div>
-
-      <!-- Tab 2: Add Product -->
-      <div class="admin-tab-pane" id="tab-add-product" style="display: none;">
-
-        <div class="admin-grid-2col">
-          <div class="admin-form-group">
-            <label class="admin-label">Product Name:</label>
-            <input type="text" class="admin-input" id="admin-prod-name" placeholder="e.g. Luxury Penthouse MLO">
-          </div>
-          <div class="admin-form-group">
-            <label class="admin-label">Category:</label>
-            <select class="admin-select" id="admin-prod-cat">
-              <option value="Scripts">Scripts</option>
-              <option value="Maps">Maps & Arenas</option>
-              <option value="Guns">Weapons Packs</option>
-              <option value="Free">Free Downloads</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="admin-grid-2col">
-          <div class="admin-form-group">
-            <label class="admin-label">Price Display:</label>
-            <input type="text" class="admin-input" id="admin-prod-price" placeholder="e.g. $19.99 or Free">
-          </div>
-          <div class="admin-form-group">
-            <label class="admin-label">Tags (comma-separated):</label>
-            <input type="text" class="admin-input" id="admin-prod-tags" placeholder="e.g. MLO, High FPS, Clean, 0.00ms">
-          </div>
-        </div>
-
-        <div class="admin-form-group">
-          <label class="admin-label">Image URL / Banner:</label>
-          <input type="text" class="admin-input" id="admin-prod-img" placeholder="assets/images/maps.jpg or https://...">
-        </div>
-
-        <div class="admin-form-group">
-          <label class="admin-label">Description & Highlights:</label>
-          <textarea class="admin-textarea" id="admin-prod-desc" rows="3" placeholder="Explain the features, optimization, compatibility..."></textarea>
-        </div>
-
-        <button class="btn btn-emerald btn-large btn-block" onclick="addAdminProduct()">
-          <span>➕ Publish Product to Store</span>
-        </button>
-      </div>
-
-      <!-- Tab 3: Add Partner -->
-      <div class="admin-tab-pane" id="tab-add-partner" style="display: none;">
-        <div class="admin-grid-2col">
-          <div class="admin-form-group">
-            <label class="admin-label">Partner Studio / Community Name:</label>
-            <input type="text" class="admin-input" id="admin-part-name" placeholder="e.g. Apex FiveM Studio">
-          </div>
-          <div class="admin-form-group">
-            <label class="admin-label">Category:</label>
-            <select class="admin-select" id="admin-part-cat">
-              <option value="dev">Development & Studios</option>
-              <option value="resources">Resources & Vaults</option>
-              <option value="community">Communities & Hubs</option>
-              <option value="servers">Gaming & Stores</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="admin-grid-2col">
-          <div class="admin-form-group">
-            <label class="admin-label">Discord Invite URL:</label>
-            <input type="text" class="admin-input" id="admin-part-discord" placeholder="https://discord.gg/...">
-          </div>
-          <div class="admin-form-group">
-            <label class="admin-label">Website URL (Optional):</label>
-            <input type="text" class="admin-input" id="admin-part-web" placeholder="https://example.com">
-          </div>
-        </div>
-
-        <div class="admin-form-group">
-          <label class="admin-label">Banner Image URL (Optional):</label>
-          <input type="text" class="admin-input" id="admin-part-banner" placeholder="https://... (GIF or PNG)">
-        </div>
-
-        <div class="admin-form-group">
-          <label class="admin-label">Partner Description & Specialty:</label>
-          <textarea class="admin-textarea" id="admin-part-desc" rows="3" placeholder="What does this partner offer?"></textarea>
-        </div>
-
-        <button class="btn btn-primary btn-large btn-block" onclick="addAdminPartner()">
-          <span>➕ Add Partner to Network</span>
-        </button>
-      </div>
-
-      <!-- Tab 4: System Diagnostics -->
-      <div class="admin-tab-pane" id="tab-telemetry" style="display: none;">
-        <div class="admin-telemetry-box" id="admin-telemetry-box">
-          <p style="color:#94a3b8;">Loading telemetry data...</p>
-        </div>
-      </div>
-
     </div>
   </div>
 
   <!-- Toast Notification Container -->
-  <div class="toast-container" id="toast-container"></div>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <div class="footer-brand-header" style="display: flex; align-items: center; gap: 0.9rem; margin-bottom: 0.8rem;">
-          <img src="/assets/images/logo.png" alt="7H STUDIO Logo" style="width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--border-glow); box-shadow: 0 0 15px var(--accent-purple-glow); object-fit: cover;" onerror="this.onerror=null; this.src='https://cdn.discordapp.com/icons/1418023065560023052/25928d432364d26f5f68fdf8bd44cbaf.png?size=1024';">
-          <div class="brand-text">
-            <span class="brand-title">7H <span class="highlight">STUDIO</span></span>
-            <span class="brand-subtitle">THE FIVEM DEVELOPMENT NETWORK</span>
-          </div>
-        </div>
-        <p class="footer-desc">
-          Professional development studio for FiveM scripts, custom MLO maps, exclusive weapon assets, and high-performance server hosting.
-        </p>
-      </div>
-
-      <div class="footer-links-group">
-        <h4>Categories</h4>
-        <a href="#store" onclick="filterCategory('Scripts')">FiveM Scripts</a>
-        <a href="#store" onclick="filterCategory('Maps')">Maps & Arenas</a>
-        <a href="#store" onclick="filterCategory('Guns')">Weapons Packs</a>
-        <a href="#store" onclick="filterCategory('Free')">Free Downloads</a>
-      </div>
-
-      <div class="footer-links-group">
-        <h4>Services</h4>
-        <a href="#services">Dedicated RDP & Hosting</a>
-        <a href="#services">Buy / Sell Bases</a>
-        <a href="#services">3D Model Fix & Decrypt</a>
-        <a href="#discord-section">Support Tickets</a>
-      </div>
-
-      <div class="footer-links-group">
-        <h4>Community</h4>
-        <a href="https://discord.gg" target="_blank" rel="noopener noreferrer">Discord Server</a>
-        <a href="#home">Announcements</a>
-        <a href="#store">Customer Feedbacks</a>
-      </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <p>&copy; 2026 7H STUDIO. All Rights Reserved. Not affiliated with Rockstar Games, Take-Two Interactive, or Cfx.re.</p>
-      <div class="footer-status-pill">
-        <span class="pulse-dot"></span>
-        <span>Systems 100% Operational • <span id="footer-member-count">708</span> Members</span>
-      </div>
-    </div>
-  </footer>
+  <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 0.6rem;"></div>
 
   <!-- Scripts -->
   <script src="products.js"></script>
-  <script src="partners.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
