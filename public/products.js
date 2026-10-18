@@ -1,5 +1,28 @@
 const PRODUCTS = [
   {
+    "id": "script_7h_carplay",
+    "name": "🍎 7H Apple CarPlay • Smart In-Car Infotainment (iOS 18)",
+    "category": "Scripts",
+    "price": "$35",
+    "isFree": false,
+    "description": "Revolutionary Apple CarPlay infotainment system for FiveM! iOS 17/18 glassmorphism, 16:9 widescreen tablet, 2D interactive car blueprint with door/window controls, engine start/stop, live RGB neon underglow color picker, 3D spatial xsound music player with Cabin vs 38m Street Party mode, smart closest-point GPS navigation, and Dynamic Island alerts. 0.00ms resmon, QBCore, Qbox & ESX.",
+    "tags": [
+      "Apple CarPlay",
+      "iOS 17/18",
+      "Interactive 2D Blueprint",
+      "RGB Neon Picker",
+      "3D Spatial Audio",
+      "Smart GPS",
+      "0.00ms Resmon"
+    ],
+    "thumbnail": "assets/images/products/carplay.jpg",
+    "fallbackImage": "assets/images/scripts.jpg",
+    "gallery": [
+      "assets/images/products/carplay.jpg"
+    ],
+    "featured": true
+  },
+  {
     "id": "script_7h_boombox",
     "name": "⚡ 7H BeatStorm 3D Boombox & Sound System Pro",
     "category": "Scripts",
