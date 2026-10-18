@@ -74,31 +74,50 @@ const requestHandler = async (req, res) => {
   if (pathname === '/' || pathname === '/index.html' || pathname === '') {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    return res.end(INDEX_HTML);
+    const p = path.join(__dirname, 'index.html');
+    return res.end(fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : INDEX_HTML);
   }
 
   if (pathname === '/style.css') {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/css; charset=utf-8');
-    return res.end(STYLE_CSS);
+    const p = path.join(__dirname, 'style.css');
+    return res.end(fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : STYLE_CSS);
   }
 
   if (pathname === '/app.js') {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
-    return res.end(APP_JS);
+    const p = path.join(__dirname, 'app.js');
+    return res.end(fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : APP_JS);
   }
 
   if (pathname === '/products.js') {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
-    return res.end(PRODUCTS_JS);
+    const p = path.join(__dirname, 'products.js');
+    return res.end(fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : PRODUCTS_JS);
   }
 
   if (pathname === '/partners.js') {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
-    return res.end(PARTNERS_JS);
+    const p = path.join(__dirname, 'partners.js');
+    return res.end(fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : PARTNERS_JS);
+  }
+
+  // Live Products API
+  if (pathname === '/api/products' && req.method === 'GET') {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    const p = path.join(__dirname, 'products.js');
+    try {
+      delete require.cache[require.resolve('./products.js')];
+      const prods = require('./products.js');
+      return res.end(JSON.stringify(prods));
+    } catch (e) {
+      return res.end(JSON.stringify([]));
+    }
   }
 
   // --- API ROUTES ---
@@ -490,7 +509,11 @@ const requestHandler = async (req, res) => {
 
   // Static Assets Fallback (Images, etc.)
   try {
-    const filePath = path.join(__dirname, pathname.replace(/^\//, ''));
+    const rel = pathname.replace(/^\//, '');
+    let filePath = path.join(__dirname, rel);
+    if (!fs.existsSync(filePath)) {
+      filePath = path.join(__dirname, 'public', rel);
+    }
     if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
       const ext = path.extname(filePath).toLowerCase();
       res.statusCode = 200;

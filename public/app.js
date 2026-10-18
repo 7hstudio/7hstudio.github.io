@@ -58,6 +58,23 @@ function initApp() {
   renderProducts();
   renderPartners();
   setupEventListeners();
+  loadLiveProducts();
+
+  async function loadLiveProducts() {
+    try {
+      const res = await fetch('/api/products');
+      if (res.ok) {
+        const liveProducts = await res.json();
+        if (Array.isArray(liveProducts) && liveProducts.length > 0) {
+          window.PRODUCTS = liveProducts;
+          initCategoryCounts();
+          renderProducts();
+        }
+      }
+    } catch (e) {
+      console.warn('Live products fetch fallback:', e);
+    }
+  }
 
   // Check if User is already verified or returning from OAuth2
   function checkInitialGateStatus() {
@@ -114,19 +131,20 @@ function initApp() {
           unlockGateImmediate();
           updateNavbarUserProfile();
         } catch(e) {
-          lockGateImmediate();
+          unlockGateImmediate();
         }
       } else {
-        lockGateImmediate();
+        // By default, allow all visitors to browse freely as guest
+        unlockGateImmediate();
       }
     } catch (e) {
       console.warn('Gate status check error:', e);
-      lockGateImmediate();
+      unlockGateImmediate();
     }
   }
 
   function lockGateImmediate() {
-    document.body.classList.add('gate-locked');
+    // Open verification modal when explicitly requested
     if (mandatoryGate) {
       mandatoryGate.classList.remove('unlocked');
       mandatoryGate.style.display = 'flex';
@@ -141,8 +159,6 @@ function initApp() {
       mandatoryGate.style.display = 'none';
       mandatoryGate.style.pointerEvents = 'none';
     }
-    const gateCard = document.getElementById('gate-card');
-    if (gateCard) gateCard.style.display = 'none';
   }
 
   // Allow direct 1-click entering as guest / visitor
@@ -192,8 +208,10 @@ function initApp() {
       all: PRODUCTS.length,
       Scripts: 0,
       Maps: 0,
+      Lobbies: 0,
       Guns: 0,
-      Free: 0
+      Free: 0,
+      Subscriptions: 0
     };
 
     PRODUCTS.forEach(p => {
@@ -202,11 +220,13 @@ function initApp() {
       }
     });
 
-    document.getElementById('count-all').textContent = counts.all;
-    document.getElementById('count-scripts').textContent = counts.Scripts;
-    document.getElementById('count-maps').textContent = counts.Maps;
-    document.getElementById('count-guns').textContent = counts.Guns;
-    document.getElementById('count-free').textContent = counts.Free;
+    if (document.getElementById('count-all')) document.getElementById('count-all').textContent = counts.all;
+    if (document.getElementById('count-subscriptions')) document.getElementById('count-subscriptions').textContent = counts.Subscriptions;
+    if (document.getElementById('count-scripts')) document.getElementById('count-scripts').textContent = counts.Scripts;
+    if (document.getElementById('count-maps')) document.getElementById('count-maps').textContent = counts.Maps;
+    if (document.getElementById('count-lobbies')) document.getElementById('count-lobbies').textContent = counts.Lobbies;
+    if (document.getElementById('count-guns')) document.getElementById('count-guns').textContent = counts.Guns;
+    if (document.getElementById('count-free')) document.getElementById('count-free').textContent = counts.Free;
   }
 
   // Filter & Sort Logic
@@ -282,18 +302,46 @@ function initApp() {
         priceDisplay = `<span class="price-strikethrough">${product.price}</span> ${discounted}`;
       }
 
-      const imgSrc = product.thumbnail || product.fallbackImage;
-      const fallbackSrc = product.fallbackImage || 'assets/images/scripts.jpg';
+      let imgSrc = product.thumbnail || product.fallbackImage || 'assets/images/scripts.jpg';
+      if (imgSrc.startsWith('assets/')) imgSrc = '/' + imgSrc;
+      let fallbackSrc = product.fallbackImage || 'assets/images/scripts.jpg';
+      if (fallbackSrc.startsWith('assets/')) fallbackSrc = '/' + fallbackSrc;
+
+      // Check if product has an MP4 video demo
+      const isVideo = (product.thumbnail && product.thumbnail.toLowerCase().includes('.mp4')) ||
+                      (product.gallery && product.gallery.some(g => g.toLowerCase().includes('.mp4')));
+      const videoSrc = (product.thumbnail && product.thumbnail.toLowerCase().includes('.mp4'))
+        ? product.thumbnail
+        : (product.gallery && product.gallery.find(g => g.toLowerCase().includes('.mp4')));
+
+      const catSlug = product.category.toLowerCase().replace(/[^a-z0-9]/g, '');
+      const catClass = `product-cat-badge cat-${catSlug}`;
+
+      let mediaHtml = '';
+      if (videoSrc) {
+        mediaHtml = `
+          <video class="product-thumb-video" src="${videoSrc}" loop muted playsinline preload="metadata" onmouseover="this.play()" onmouseout="this.pause()" poster="${fallbackSrc}" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='block';"></video>
+          <img src="${fallbackSrc}" alt="${escapeHtml(product.name)}" class="product-thumb" style="display:none;" loading="lazy">
+          <span class="media-video-badge">
+            <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            LIVE DEMO
+          </span>
+        `;
+      } else {
+        mediaHtml = `
+          <img src="${imgSrc}" 
+               alt="${escapeHtml(product.name)}" 
+               class="product-thumb" 
+               loading="lazy"
+               onerror="this.onerror=null; this.src='${fallbackSrc}';">
+        `;
+      }
 
       return `
         <article class="product-card" id="card-${product.id}">
           <div class="product-thumb-wrapper">
-            <img src="${imgSrc}" 
-                 alt="${escapeHtml(product.name)}" 
-                 class="product-thumb" 
-                 loading="lazy"
-                 onerror="this.onerror=null; this.src='${fallbackSrc}';">
-            <span class="product-cat-badge">${product.category}</span>
+            ${mediaHtml}
+            <span class="${catClass}">${product.category}</span>
             <span class="${priceClass}">${priceDisplay}</span>
           </div>
           
@@ -727,11 +775,31 @@ function initApp() {
       if (modalDiscountInfo) modalDiscountInfo.textContent = `Join 7H STUDIOS Discord to save 10% on this item`;
     }
 
-    const mainImg = prod.thumbnail || prod.fallbackImage;
-    modalMainImg.src = mainImg;
-    modalMainImg.onerror = () => {
-      modalMainImg.src = prod.fallbackImage || 'assets/images/scripts.jpg';
-    };
+    const isVideo = (prod.thumbnail && prod.thumbnail.toLowerCase().includes('.mp4')) ||
+                    (prod.gallery && prod.gallery.some(g => g.toLowerCase().includes('.mp4')));
+    const videoSrc = (prod.thumbnail && prod.thumbnail.toLowerCase().includes('.mp4'))
+      ? prod.thumbnail
+      : (prod.gallery && prod.gallery.find(g => g.toLowerCase().includes('.mp4')));
+
+      const wrapper = document.querySelector('.modal-main-img-wrapper');
+      if (wrapper) {
+        const badgeHtml = `<span class="modal-price-badge ${prod.isFree ? 'is-free' : ''}" id="modal-price-badge">${modalPriceBadge ? modalPriceBadge.innerHTML : prod.price}</span>`;
+        let fallback = prod.fallbackImage || 'assets/images/scripts.jpg';
+        if (fallback.startsWith('assets/')) fallback = '/' + fallback;
+        if (videoSrc) {
+          wrapper.innerHTML = `
+            <video class="modal-main-video" src="${videoSrc}" controls autoplay loop playsinline poster="${fallback}"></video>
+            ${badgeHtml}
+          `;
+        } else {
+          let mainImg = prod.thumbnail || prod.fallbackImage || 'assets/images/scripts.jpg';
+          if (mainImg.startsWith('assets/')) mainImg = '/' + mainImg;
+          wrapper.innerHTML = `
+            <img src="${mainImg}" alt="${escapeHtml(prod.name)}" id="modal-main-img" onerror="this.onerror=null; this.src='${fallback}'">
+            ${badgeHtml}
+          `;
+        }
+      }
 
     modalTags.innerHTML = prod.tags.map(t => `<span class="tag-item">${escapeHtml(t)}</span>`).join('');
 

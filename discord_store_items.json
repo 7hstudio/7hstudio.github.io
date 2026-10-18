@@ -1,0 +1,507 @@
+[
+  {
+    "channelName": "⚙️丨-𝟩𝐻-ꜱᴄʀɪᴘᴛꜱ",
+    "category": "Scripts",
+    "id": "1555029794930823248",
+    "content": "<:ChatGPTImage23202609_20_23:1541238760669319309>  丨Sign Creator 3D\nTake total control of your server's in-world text with ls_signs. No more flat DrawText labels or one-off prop hacks. Now you can compose, colour, and place real 3D Signs directly in-game, from a single-line shop name to a multi-line venue banner, and save them so they persist for every player who walks by. \nᴘʀɪX丨 25 $ @here @everyone                                        🎫 Open Ticket    <a:flechecouleur:1010140052573143090>   <a:60segundos:1498841645892894941>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470040913477644/1555029784218570762/Desktop_2026.10.01_-_02.22.53.02.mp4?backend=b2&ex=6ad4ca97&is=6ad37917&hm=9f7fcd2dd4b31780035683c92d0f1a4ac6e24d8d4796a7a3e6211c12f434d7e2&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-01T01:33:14.168Z"
+  },
+  {
+    "channelName": "⚙️丨-𝟩𝐻-ꜱᴄʀɪᴘᴛꜱ",
+    "category": "Scripts",
+    "id": "1549561760430821426",
+    "content": "<:ChatGPTImage23202609_20_23:1541238760669319309>  丨RENT CAR V1\nᴘʀɪX丨 18.99$ @here @everyone",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470040913477644/1549561760045072505/ChatGPT_Image_16_2026_12_23_23_.png?ex=6ad4ac99&is=6ad35b19&hm=a764b1ae2bfc0d48a67a446d4a14e5461109f790f263faa5429168d703252d8a&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-09-15T23:25:13.152Z"
+  },
+  {
+    "channelName": "⚙️丨-𝟩𝐻-ꜱᴄʀɪᴘᴛꜱ",
+    "category": "Scripts",
+    "id": "1549554658601861130",
+    "content": "<:ChatGPTImage23202609_20_23:1541238760669319309>  丨  Loading Screen  V1\nᴘʀɪX丨 10$ @here @everyone  <@&1541096331509243976>   Écran de chargement professionnel au design futuriste, avec un style noir et bleu néon, une identité puissante et une touche Cyber Gaming. ⚡💙\n🎫 Open Ticket    <a:flechecouleur:1010140052573143090>   :60segundos:",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470040913477644/1549554657922252830/ChatGPT_Image_15_2026_11_56_30_.png?ex=6ad4a5fb&is=6ad3547b&hm=8f6dd425e3a418632ba5a01d11e3e9f4e580f4993d8d9e620da349f120835e8b&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-09-15T22:56:59.944Z"
+  },
+  {
+    "channelName": "⚙️丨-𝟩𝐻-ꜱᴄʀɪᴘᴛꜱ",
+    "category": "Scripts",
+    "id": "1549548260337909770",
+    "content": "<:ChatGPTImage23202609_20_23:1541238760669319309>  丨Teleport Menu T V1\nᴘʀɪX丨 29.99$ @here @everyone  <@&1541096331509243976>  Menu de Téléportation — Une interface moderne et élégante en bleu, permettant aux joueurs de choisir rapidement leur destination et de prévisualiser le lieu avant de se téléporter. ⚡🗺️                                                                                           \n🎫 Open Ticket    <a:flechecouleur:1010140052573143090>   <a:60segundos:1193024646677807244>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470040913477644/1549548259377160392/ChatGPT_Image_15_2026_11_26_14_.png?ex=6ad4a006&is=6ad34e86&hm=f2050caf33ed2770687bef0d7c497d8e6ff40b335a9c7481fc96a00c635832ea&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-09-15T22:31:34.479Z"
+  },
+  {
+    "channelName": "⚙️丨-𝟩𝐻-ꜱᴄʀɪᴘᴛꜱ",
+    "category": "Scripts",
+    "id": "1549544315020247102",
+    "content": "<:ChatGPTImage23202609_20_23:1541238760669319309>  丨ANTI DUMP  V1\nᴘʀɪX丨 39.99$ @here @everyone                                                                                                                                                                         Dumper  حماية متطورة • أمان قوي • بدون   🔵",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470040913477644/1549544314869383278/ChatGPT_Image_15_2026_11_12_36_.png?ex=6ad49c59&is=6ad34ad9&hm=fd67ebf39db5e8ae34f803e2098e9828cd38eb997c5b642682f6706497588b03&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-09-15T22:15:53.842Z"
+  },
+  {
+    "channelName": "⚙️丨-𝟩𝐻-ꜱᴄʀɪᴘᴛꜱ",
+    "category": "Scripts",
+    "id": "1549480076741967922",
+    "content": "🚗 7H RENTAL — Vehicle Rental Script\n\nA modern and optimized vehicle rental system for FiveM servers.\n\n✅ Modern NUI\n✅ ESX & QBCore support\n✅ Rental duration system\n✅ Security deposit\n✅ Vehicle return system\n✅ Server-side validation\n✅ ox_lib & ox_target\n✅ Easy configuration\n✅ English interface\n\n💰 Price: €9.99\n\n📩 Open a ticket to purchase.\n\n\n@everyone @here",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470040913477644/1549480076402499594/image.png?ex=6ad46086&is=6ad30f06&hm=d2283f17e0b9eca4c58bf4defefaf2b7cff28fc3754b3a0204bcf84c8df63e38&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-09-15T18:00:38.243Z"
+  },
+  {
+    "channelName": "⚙️丨-𝟩𝐻-ꜱᴄʀɪᴘᴛꜱ",
+    "category": "Scripts",
+    "id": "1549475979225993289",
+    "content": "7H 丨SCRIPT RECOIL CONTROL V1\nᴘʀɪX丨 9.99$ @here @everyone",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470040913477644/1549475978915487884/Recoil_Control_V1.png?ex=6ad45cb5&is=6ad30b35&hm=495d8b3d1260783b99f6e962724b1d38cf9ca138a04707562405caee6ec16cff&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-09-15T17:44:21.319Z"
+  },
+  {
+    "channelName": "⚙️丨-𝟩𝐻-ꜱᴄʀɪᴘᴛꜱ",
+    "category": "Scripts",
+    "id": "1549475401602957422",
+    "content": "7H 丨SCRIPT ANTI AIMBOT V1\nᴘʀɪX丨 39.99$ @here @everyone\n<a:DBE_accepted:1352651935529959514>  Aimbot\n<a:DBE_accepted:1352651935529959514>  Silent Aim\n<a:DBE_accepted:1352651935529959514>Wallhack / Magic Bullet\n<a:DBE_accepted:1352651935529959514> Our Fivem Anti Aimbot Script works on all servers  <:discord_dtaff:1350163102926241884>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470040913477644/1549475400848121916/7H_CORE.png?ex=6ad45c2b&is=6ad30aab&hm=ba7d79b4e0622361a316c4f610f81ffba244431545e6a1d87626954bd6d9dd93&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-09-15T17:42:03.603Z"
+  },
+  {
+    "channelName": "⚙️丨-𝟩𝐻-guns",
+    "category": "Guns",
+    "id": "1560065952811581550",
+    "content": "<:ChatGPTImage1202609_09_33:1555328423134756944>  丨100 Weapons Pack Guns V1   \nᴘʀɪX丨 10$<@&1549469716785930363> @everyone @here",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470043845165189/1560065952077455421/Enregistrement_de_lecran_2026-10-14_235847.mp4?ex=6ad4a7e3&is=6ad35663&hm=b2977ae879d6b395ac3d362877b22d4a90b5a8898866ceb11105aef005b76366&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-14T23:05:07.774Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-free",
+    "category": "Free",
+    "id": "1557547953252470814",
+    "content": "<:ChatGPTImage1202609_09_33:1555328423134756944> 丨NEW LOBBY FREE  🚀 \n 📩 **Open a ticket <@&1549469716785930363> @here@everyone <a:60segundos:1498841645892894941>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1557547952757538867/image.png?ex=6ad4b951&is=6ad367d1&hm=1289cd0a2d55fcbfdb628e79dec7b41a06b3c4ee17653f335ff58eb6bfc575bd&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-08T00:19:29.897Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-free",
+    "category": "Free",
+    "id": "1557018273285931048",
+    "content": "<:ChatGPTImage1202609_09_33:1555328423134756944> 丨**NEW LOBBY FREE**  🚀 \n 📩 **Open a ticket <@&1549469716785930363> @here@everyone <a:60segundos:1498841645892894941>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1557018271096774817/image.png?backend=b2&ex=6ad4c643&is=6ad374c3&hm=eeded117ece33f661d2064047bf8839f7110a9c7cd0bf7fc84c77572f08f1387&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-06T13:14:44.352Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-free",
+    "category": "Free",
+    "id": "1556666908294652085",
+    "content": "<:ChatGPTImage1202609_09_33:1555328423134756944> 丨**NEW LOBBY FREE**  🚀 \n 📩 **Open a ticket <@&1549469716785930363> @here@everyone <a:60segundos:1498841645892894941>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1556666905866272848/D9C7996F-8D33-4B26-8AB5-8DED5E40AB51.png?backend=b2&ex=6ad4d087&is=6ad37f07&hm=352e22c897c119dce4d53fd2b55762fef3c5b9ea00e66b52b8277234e150e5c4&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-05T13:58:32.410Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-free",
+    "category": "Free",
+    "id": "1556402654312271892",
+    "content": "<:ChatGPTImage1202609_09_33:1555328423134756944> 丨**NEW LOBBY FREE**  🚀 \n 📩 **Open a ticket <@&1549469716785930363> @here@everyone <a:60segundos:1498841645892894941>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1556402651556483223/image.png?backend=b2&ex=6ad4832c&is=6ad331ac&hm=0bef3dd4e96eda5a7c9dc2dd289f63ca174330f8419a8384a75f95bdb75b977f&",
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1556402652823425184/image.png?backend=b2&ex=6ad4832c&is=6ad331ac&hm=11c252bced0a72dba66a343fbf2cfc0e6b60fbfacd2a6fee083a68bee27de393&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-04T20:28:29.351Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-free",
+    "category": "Free",
+    "id": "1556100800034512926",
+    "content": "<:ChatGPTImage1202609_09_33:1555328423134756944> 丨NEW LOBBY FREE  🚀 \n 📩 Open a ticket   <@&1549469716785930363>   <a:60segundos:1498841645892894941>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1556100790270042133/Desktop_2026.10.04_-_01.21.17.02.mp4?backend=b2&ex=6ad4bb8b&is=6ad36a0b&hm=d3e10702869fe71fc40c5042ae01da660b1aefacfc2ee36a268d84c25a7834a9&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-04T00:29:01.683Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-free",
+    "category": "Free",
+    "id": "1556072006166777949",
+    "content": "<:ChatGPTImage1202609_09_33:1555328423134756944> 丨NEW LOBBY FREE  🚀 \n 📩 Open a ticket   @here <@&1549469716785930363> <a:60segundos:1498841645892894941>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1556071995223969882/image.png?backend=b2&ex=6ad4a0ba&is=6ad34f3a&hm=89f5ad4693acaac088b81e78aae3dba2835dd363f59cfc231d9927f735a44f82&",
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1556072003046350919/image.png?backend=b2&ex=6ad4a0bb&is=6ad34f3b&hm=b28f245e7563c79ac330df91cff10ec14a5f41a051cad15e3daf3ab09d123b67&",
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1556072004866801754/image.png?backend=b2&ex=6ad4a0bc&is=6ad34f3c&hm=89a08c9bc7a71780776ad34f1365d55824c0329c67af9895535b58a8672c0dc0&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-03T22:34:36.690Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-free",
+    "category": "Free",
+    "id": "1555747333113913456",
+    "content": "<:ChatGPTImage1202609_09_33:1555328423134756944> 丨free Lobby\n 📩 Open a ticket   @here @everyone",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1555747327770370068/image.png?backend=b2&ex=6ad4c3db&is=6ad3725b&hm=df5e8760cb996e5a44f8dc96dd91bd13a938cc7d2a495b4e8db75c5ff637336b&",
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1555747328835457054/image.png?backend=b2&ex=6ad4c3db&is=6ad3725b&hm=39b23846177f952339a7724b9017c7a94c65ab9036af0c372c4bbb6a73cf4611&",
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1555747329833705572/image.png?backend=b2&ex=6ad4c3db&is=6ad3725b&hm=8272f51ad74bcdfcccdeacd383b1de823c55d180db363a539b8efb5dbbd32054&",
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1555747330823688272/image.png?backend=b2&ex=6ad4c3dc&is=6ad3725c&hm=b6a4baff56ab9cf194d4cf887f5b24400deac708375acd38365de3bf34982bb0&",
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1555747331956146256/image.png?backend=b2&ex=6ad4c3dc&is=6ad3725c&hm=e46e7e7a834dee29af981fa8b455b1ce1632bdc3067396a8c65ec609ead409e0&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-03T01:04:28.602Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-free",
+    "category": "Free",
+    "id": "1555557771963801732",
+    "content": "<:ChatGPTImage23202609_20_23:1541238760669319309>  丨free Lobby  and pack map \n 📩 Open a ticket   @here @everyone",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1555557769837285496/D666A138-FA80-4B95-BE61-A3C9C0390271.png?backend=b2&ex=6ad4bc11&is=6ad36a91&hm=a3ff3d00a12c1d936134d0c94b180f1f2198d12283c291bd7f9a69f3dbd9d02d&",
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1555557771007631360/91C37DF9-4EE3-4402-BB91-DDF832DC726C.png?backend=b2&ex=6ad4bc11&is=6ad36a91&hm=129a1a8fd66b2be6bcc8042fddddb80cef0f5b4b6795da5350eac2a15ff45973&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-02T12:31:13.702Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-free",
+    "category": "Free",
+    "id": "1555557539569995896",
+    "content": "[Resource Name] : Leaderborad \n[Resource Preview]: \nCOORDS : -149.94, -610.07, 217.05.    <:ChatGPTImage23202609_20_23:1541238760669319309>  丨free   \n 📩 Open a ticket   @here @everyone",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1555557537414119585/image-6.png?backend=b2&ex=6ad4bbd9&is=6ad36a59&hm=4b208f34308efdcf709c208c9be3d74f0a3e0b5f2873946136b87330a84c1a3a&",
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1555557538764820580/image-5.png?backend=b2&ex=6ad4bbda&is=6ad36a5a&hm=9ff42d7ffcd06651562fa8f0a9f688442e6932786220209c16367c47c724ff23&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-02T12:30:18.295Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-free",
+    "category": "Free",
+    "id": "1555555823445475358",
+    "content": "<:ChatGPTImage23202609_20_23:1541238760669319309>  丨free Lobby  \n 📩 Open a ticket   @here @everyone",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1555555821365239808/image-4.png?backend=b2&ex=6ad4ba40&is=6ad368c0&hm=c6a19c36279e6a6e86efa871756514f450635de4eca9e152c8088a9a49b912b3&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-02T12:23:29.139Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-free",
+    "category": "Free",
+    "id": "1555555753438216342",
+    "content": "<:ChatGPTImage23202609_20_23:1541238760669319309>  丨free Lobby  \n 📩 Open a ticket   @here @everyone",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470058164654192/1555555751496392734/22617C04-D24B-4FD9-B871-3A0B00D09934.png?backend=b2&ex=6ad4ba2f&is=6ad368af&hm=ce076ed8db6c9fb22d0af01b13387e5dacd4afc266920389036900a906d4c586&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-02T12:23:12.448Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-maps",
+    "category": "Maps",
+    "id": "1559025411424264243",
+    "content": "<:ChatGPTImage1202609_09_33:1555328423134756944>   丨NEW PACK  MAPS  ARENA AND ROOF  V6 \nᴘʀɪX丨40$ @here <@&1549469716785930363>  @everyone 🔥",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1559025406835826839/image.png?ex=6ad4d34e&is=6ad381ce&hm=316a97623926892a4d9276301d6fc60c41c828a17c35a1aa7bedc632485cc94d&",
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1559025407284744303/image.png?ex=6ad4d34e&is=6ad381ce&hm=9d79af86f2d8161be62678518d383e60dfce70e37f030ac7ddf44425387a598b&",
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1559025407834193940/image.png?ex=6ad4d34e&is=6ad381ce&hm=cfabc4bed0132498c750c94a065869db934f8997cf33bd15bdbd7a406f46a225&",
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1559025408286924930/image.png?ex=6ad4d34e&is=6ad381ce&hm=11f91441b44820dbc67cf2d718a3067886b26bb2bc445940b6f4b43b93862e8a&",
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1559025408891035710/image.png?ex=6ad4d34e&is=6ad381ce&hm=5b1251687bf6808c58592e326069d6cecca07b7271315ddff19469b8948748c3&",
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1559025409344151612/image.png?ex=6ad4d34e&is=6ad381ce&hm=7f97a1775cc606aa14c56a19ce417e8b080dc95b525521cb239f91ffeefa14c6&",
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1559025409998331934/image.png?ex=6ad4d34f&is=6ad381cf&hm=93184ab0a574c54ef7c8d7aceaeab6d67ea773016a8c179c671711baa80e8ab0&",
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1559025410572947496/image.png?ex=6ad4d34f&is=6ad381cf&hm=7ee0499f37f19ded05e963157f4d580571683b354ea14d338f5847b33931983e&",
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1559025410933784646/image.png?ex=6ad4d34f&is=6ad381cf&hm=a8fd0de22c89b5922610e3475ef7618a5f4db63190e2f0b5afa227c6a04ec05e&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-12T02:10:23.375Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-maps",
+    "category": "Maps",
+    "id": "1559000746408812547",
+    "content": "<:ChatGPTImage1202609_09_33:1555328423134756944>   丨NEW PACK  25  MAPS  ARENA AND ROOF  V5 \nᴘʀɪX丨50$ @here <@&1549469716785930363>  @everyone 🔥",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1559000717551992842/Desktop_2026.10.12_-_00.57.44.01.mp4?ex=6ad4bc4f&is=6ad36acf&hm=862997353fadf3657504179a4ae62b12dd13b7bf6c046366ce8b5eebc7e4a0e2&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-12T00:32:22.777Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-maps",
+    "category": "Maps",
+    "id": "1555747197042032760",
+    "content": "<:ChatGPTImage1202609_09_33:1555328423134756944>   丨PACK  MAPS  ARENA  \nᴘʀɪX丨20$ @here @everyone",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1555747193464430642/image.png?backend=b2&ex=6ad4c3bb&is=6ad3723b&hm=86cf8e948daa88ef60f228a05f285b79f7c74873f549a682e4fc44dd4a59c1fb&",
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1555747194974249010/image.png?backend=b2&ex=6ad4c3bb&is=6ad3723b&hm=99c0104baa5e15f3f3c5014c75cb82e1eef7794184f2489be8019156f12b42ca&",
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1555747196039725056/image.png?backend=b2&ex=6ad4c3bb&is=6ad3723b&hm=e8b081063b404add51b2dea0e0e1e341cb7e2fc6b09e09325232f3dd3f6a64e5&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-03T01:03:56.160Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-maps",
+    "category": "Maps",
+    "id": "1549546062543458464",
+    "content": "<:ChatGPTImage23202609_20_23:1541238760669319309>  丨PACK  MAPS  ARENA  V1 \nᴘʀɪX丨35$ @here @everyone",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1549546060618268672/image.png?ex=6ad49dfa&is=6ad34c7a&hm=88e9c98ce4a615963fdfbe3f6a06d9361bfe0c2edcd7d02c312a9885a9b16001&",
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1549546061130104932/image.png?ex=6ad49dfa&is=6ad34c7a&hm=3c6671f535dd793df83b481a2731e3d8dc8918ba9e22005b8cd9194862a8ae59&",
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1549546061536694352/image.png?ex=6ad49dfa&is=6ad34c7a&hm=bc09c094f404ebf955bba7b4ef830806dd0ba6bc43a3154e9e2cec563ff6c77b&",
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1549546062111449108/image.png?ex=6ad49dfa&is=6ad34c7a&hm=63b68b460f625304c243d8475be2253c096884dc593c2fb53a993c770752e3e3&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-09-15T22:22:50.484Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-maps",
+    "category": "Maps",
+    "id": "1549540422177788005",
+    "content": "<:ChatGPTImage23202609_20_23:1541238760669319309>  丨 MAPS  ARENA V1 \nᴘʀɪX丨15$ @here @everyone",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1549540421829398568/ChatGPT_Image_25_2026_11_20_35_.png?ex=6ad498b9&is=6ad34739&hm=c186b57955cfe9d6584e486f5f51b0550b1eed9369a42a2660ccde22070e2162&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-09-15T22:00:25.716Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-maps",
+    "category": "Maps",
+    "id": "1549540224126816366",
+    "content": "<:ChatGPTImage23202609_20_23:1541238760669319309>  丨 ROOF  ARENA V1 \nᴘʀɪX丨20$ @here @everyone",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1549540223720099901/ChatGPT_Image_25_2026_11_25_22_.png?ex=6ad4988a&is=6ad3470a&hm=6d5d75b48a4fb6a5a7da19f722e8bd113c6d20d86af57f6b3afd316614b130a6&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-09-15T21:59:38.497Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-maps",
+    "category": "Maps",
+    "id": "1549539942076514386",
+    "content": "<:ChatGPTImage23202609_20_23:1541238760669319309>  丨 MAPS  ARENA SPECIAL V1 \nᴘʀɪX丨15$ @here @everyone",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470060790157452/1549539941418012722/ChatGPT_Image_25_2026_11_29_34_.png?ex=6ad49847&is=6ad346c7&hm=d0b85c47db42f4a1a7de361940eea578213deab8622a90cdb58b8caba24e5d4d&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-09-15T21:58:31.251Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-lobby",
+    "category": "Lobby",
+    "id": "1559039050822848542",
+    "content": "7H <:ChatGPTImage1202609_09_33:1555328423134756944> 丨New  Spawn Lobby   V10 👻   <a:60segundos:1498841645892894941>   🚀 🔥 \nᴘʀɪX丨60$ @here @everyone <@&1549469716785930363>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470062287519786/1559039015917719562/Desktop_2026.10.12_-_03.51.12.02.mp4?ex=6ad4dffa&is=6ad38e7a&hm=cd8b89251a7c36557b9f7e849092dac7c1e8d503de9d8e11807c77a628b3186d&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-12T03:04:35.261Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-lobby",
+    "category": "Lobby",
+    "id": "1558586450876956844",
+    "content": "<@&1549469716785930363>",
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2026-10-10T21:06:07.025Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-lobby",
+    "category": "Lobby",
+    "id": "1557546270963400798",
+    "content": "**7H <:ChatGPTImage1202609_09_33:1555328423134756944> 丨New  Spawn Lobby Hallowin  V9** 🎃👻   <a:60segundos:1498841645892894941>   🚀 🔥 \n**ᴘʀɪX丨80$ @here @everyone <@&1549469716785930363> **",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470062287519786/1557546258325962812/Desktop_2026.10.08_-_01.04.59.01.mp4?ex=6ad4b7bd&is=6ad3663d&hm=bd38bd36f57f5dc820dab16539fcaa339a90e9561f2c4c315e624d83aa2ade96&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-08T00:12:48.808Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-lobby",
+    "category": "Lobby",
+    "id": "1557023847587520653",
+    "content": "**soooooon**",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470062287519786/1557023845720793158/image.png?backend=b2&ex=6ad4cb74&is=6ad379f4&hm=08f58319c2f5b3185e726666002d2c65b78b5cf5b48589be306cc9c9c566c6b7&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-06T13:36:53.369Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-lobby",
+    "category": "Lobby",
+    "id": "1556383884608798763",
+    "content": "**7H <:ChatGPTImage1202609_09_33:1555328423134756944> 丨New  Spawn Lobby  V8**     <a:60segundos:1498841645892894941>   🚀 \n**ᴘʀɪX丨 30$ @here<@&1549469716785930363> **",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470062287519786/1556383877990191215/Desktop_2026.10.04_-_13.53.01.03.mp4?backend=b2&ex=6ad471b0&is=6ad32030&hm=074910648014f502c26343fa543e7e2e95a4f92ccd03285edbced12fd71f15e8&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-04T19:13:54.305Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-lobby",
+    "category": "Lobby",
+    "id": "1556382506977198181",
+    "content": "**7H** <:ChatGPTImage1202609_09_33:1555328423134756944> 丨  **Spawn Lobby  V6 **    <a:60segundos:1498841645892894941>   🚀 \n**ᴘʀɪX丨 20$** @here<@&1549469716785930363>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470062287519786/1556382505354137600/image.png?backend=b2&ex=6ad47069&is=6ad31ee9&hm=33ac1b2ea0589cbc879749c4984a932474c0124b6a72c188b98c3cb767e3cfb8&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-04T19:08:25.852Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-lobby",
+    "category": "Lobby",
+    "id": "1556382114482491544",
+    "content": "**7H **<:ChatGPTImage1202609_09_33:1555328423134756944> **丨 Spawn Lobby  V5 **    <a:60segundos:1498841645892894941>   🚀 \n**ᴘʀɪX丨 15$** @here<@&1549469716785930363>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470062287519786/1556382113337450588/image.png?backend=b2&ex=6ad4700c&is=6ad31e8c&hm=d7d17ce932c014f361a34fad7d28ca312a87814a6b5bd119dcf296dfeec552e7&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-04T19:06:52.274Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-lobby",
+    "category": "Lobby",
+    "id": "1556381781631172618",
+    "content": "**7H 丨Spawn Lobby  V4**\nᴘʀɪX丨 15$ @here @everyone",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470062287519786/1556381778787307561/image.png?backend=b2&ex=6ad46fbc&is=6ad31e3c&hm=47c51cd3f7e7a2ba968f254639909f8623fecb30a1889200670be4de0588b064&",
+      "https://cdn.discordapp.com/attachments/1549470062287519786/1556381780309970944/image.png?backend=b2&ex=6ad46fbc&is=6ad31e3c&hm=792087e05763a51161a50d61388091ae332be24b572f815278bbd9c9c92f7148&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-04T19:05:32.916Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-lobby",
+    "category": "Lobby",
+    "id": "1555787493394092114",
+    "content": "**7H** <:ChatGPTImage1202609_09_33:1555328423134756944> 丨**Spawn Lobby  V3**     <a:60segundos:1498841645892894941>   🚀 \n**ᴘʀɪX丨 50$** @here @everyone  <@&1549469716785930363>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470062287519786/1555787482703073381/GTAV_FiveM.exe_2026.10.03_-_04.38.55.04.mp4?backend=b2&ex=6ad4e941&is=6ad397c1&hm=52a88b4aa3d664a92716a495eb92597d1ebe0b2260ec1936c9d6e0e12d4b38c5&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-03T03:44:03.559Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-lobby",
+    "category": "Lobby",
+    "id": "1555774571037196328",
+    "content": "**7H** <:ChatGPTImage1202609_09_33:1555328423134756944> **丨Spawn Lobby  V2** \n**ᴘʀɪX丨 30$** @here @everyone <@&1549469716785930363>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470062287519786/1555774564342960248/Desktop_2026.10.03_-_03.47.40.03.mp4?backend=b2&ex=6ad4dd39&is=6ad38bb9&hm=236c65a8feef5ee450c5261ffc8584cad0995216720171876b4485fca6404029&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-03T02:52:42.629Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-lobby",
+    "category": "Lobby",
+    "id": "1555738390744408177",
+    "content": "**7H** <:ChatGPTImage1202609_09_33:1555328423134756944> **丨Spawn Lobby **\n**ᴘʀɪX丨 20$** @here <@&1549469716785930363>",
+    "attachments": [
+      "https://cdn.discordapp.com/attachments/1549470062287519786/1555738372184739991/Desktop_2026.10.03_-_01.20.55.01.mp4?backend=b2&ex=6ad4bb84&is=6ad36a04&hm=4e11636e7f8a7378d101646951e193a0d707c1768b204132c2acdb8c382cc513&",
+      "https://cdn.discordapp.com/attachments/1549470062287519786/1555738380191408160/image.png?backend=b2&ex=6ad4bb86&is=6ad36a06&hm=69f943a5f03dab53c79b68c9b14312b6b1fdca086f6b751936f6a9b18e3317c8&",
+      "https://cdn.discordapp.com/attachments/1549470062287519786/1555738381906870292/image.png?backend=b2&ex=6ad4bb86&is=6ad36a06&hm=db66ebc310dba98cac9318063760cc2f8861632458049ed63cf87cfaffc9f17f&"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-03T00:28:56.575Z"
+  },
+  {
+    "channelName": "🛠️丨-𝟩𝐻-rdp",
+    "category": "RDP",
+    "id": "1554456016442237000",
+    "content": "Sooon. @here",
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2026-09-29T11:33:14.716Z"
+  },
+  {
+    "channelName": "🍿丨netflix",
+    "category": "Subscriptions",
+    "id": "sub_netflix_4k",
+    "content": "🍿丨Netflix Premium 4K Ultra HD\nWatch movies, series and anime in 4K Ultra HD + HDR. Private PIN profile & offline downloads.\nᴘʀɪX丨 3.99$ @here @everyone\n🎫 Open Ticket",
+    "attachments": [
+      "https://images.ctfassets.net/4cd45et68cgf/7LrExJ6Kmfa8viAbWKuEZz/c4704a4f31dd132b0336204714fb1430/Netflix-Logo.png"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-18T01:45:00.000Z"
+  },
+  {
+    "channelName": "🤖丨chatgpt-plus",
+    "category": "Subscriptions",
+    "id": "sub_chatgpt_plus",
+    "content": "🤖丨ChatGPT Plus (GPT-4o & o1 Reasoning)\nAccess GPT-4o, OpenAI o1, Advanced Real-Time Voice Mode, DALL-E 3 & Code Interpreter.\nᴘʀɪX丨 5.99$ @here @everyone\n🎫 Open Ticket",
+    "attachments": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-18T01:45:00.000Z"
+  },
+  {
+    "channelName": "✨丨gemini-advanced",
+    "category": "Subscriptions",
+    "id": "sub_gemini_pro",
+    "content": "✨丨Google Gemini Advanced 1.5 Pro + 2TB Cloud\nGoogle Gemini 1.5 Pro with 1M+ token context window + 2TB Google One Cloud storage.\nᴘʀɪX丨 4.99$ @here @everyone\n🎫 Open Ticket",
+    "attachments": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/1024px-Google_Gemini_logo.svg.png"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-18T01:45:00.000Z"
+  },
+  {
+    "channelName": "🚀丨discord-nitro",
+    "category": "Subscriptions",
+    "id": "sub_discord_nitro",
+    "content": "🚀丨Discord Nitro Boost\n2 Free Server Boosts, 500MB uploads, 4K 60FPS streams, custom animated emojis & banners.\nᴘʀɪX丨 4.50$ @here @everyone\n🎫 Open Ticket",
+    "attachments": [
+      "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-18T01:45:00.000Z"
+  },
+  {
+    "channelName": "🎵丨spotify-canva",
+    "category": "Subscriptions",
+    "id": "sub_spotify_canva",
+    "content": "🎵丨Spotify Premium & Canva Pro Suite\nAd-free 320kbps extreme audio Spotify + Canva Pro with Magic Studio AI & 100M+ assets.\nᴘʀɪX丨 6.99$ @here @everyone\n🎫 Open Ticket",
+    "attachments": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/1024px-Spotify_logo_without_text.svg.png"
+    ],
+    "embeds": [],
+    "timestamp": "2026-10-18T01:45:00.000Z"
+  }
+]
