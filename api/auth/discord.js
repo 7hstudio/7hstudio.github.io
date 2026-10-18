@@ -1,7 +1,7 @@
 module.exports = (req, res) => {
   const CLIENT_ID = process.env.CLIENT_ID || '1560743842775568504';
   const proto = req.headers['x-forwarded-proto'] || 'https';
-  const host = req.headers['x-forwarded-host'] || req.headers.host || '7h-studios-web.vercel.app';
+  const host = req.headers['x-forwarded-host'] || req.headers.host || '7hstudio.loca.lt';
   const base = `${proto}://${host}`;
   const redirectUri = encodeURIComponent(`${base}/api/auth/callback`);
 

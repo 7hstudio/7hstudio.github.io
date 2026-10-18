@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
       return res.end(JSON.stringify({
         success: true,
         guildId: GUILD_ID,
-        name: '7H STUDIOS',
+        name: '7H STUDIO',
         totalMembers: 708,
         onlineMembers: 77,
         iconUrl: 'assets/images/logo.png'
@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
     return res.end(JSON.stringify({
       success: true,
       guildId: GUILD_ID,
-      name: guild.name || '7H STUDIOS',
+      name: guild.name || '7H STUDIO',
       totalMembers: guild.approximate_member_count || 708,
       onlineMembers: guild.approximate_presence_count || 77,
       iconUrl: guild.icon ? `https://cdn.discordapp.com/icons/${GUILD_ID}/${guild.icon}.png` : 'assets/images/logo.png'
@@ -50,7 +50,7 @@ module.exports = async (req, res) => {
     return res.end(JSON.stringify({
       success: true,
       guildId: GUILD_ID,
-      name: '7H STUDIOS',
+      name: '7H STUDIO',
       totalMembers: 708,
       onlineMembers: 77,
       iconUrl: 'assets/images/logo.png',

@@ -38,7 +38,7 @@ module.exports = async (req, res) => {
 
         const embed = {
           title: `🛒 NEW ORDER: #${orderId}`,
-          description: `An order has been placed on the **7H STUDIOS** official store!`,
+          description: `An order has been placed on the **7H STUDIO** official store!`,
           color: 0x10b981,
           fields: [
             { name: '📦 Asset Ordered', value: `${productName || 'FiveM Asset'}`, inline: true },
@@ -48,7 +48,7 @@ module.exports = async (req, res) => {
             { name: '📝 Ref / Note', value: `${reference || 'None'}`, inline: true },
             { name: '⚡ Status', value: '⏳ Awaiting Payment / Ticket Verification', inline: true }
           ],
-          footer: { text: '7H STUDIOS • Executive Order Dispatch' },
+          footer: { text: '7H STUDIO • Executive Order Dispatch' },
           timestamp: new Date().toISOString()
         };
 

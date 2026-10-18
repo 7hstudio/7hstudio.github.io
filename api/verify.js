@@ -54,7 +54,7 @@ module.exports = async (req, res) => {
           rolesCount: 1,
           joinedAt: new Date().toISOString()
         },
-        message: `Verified! Welcome ${query} to 7H STUDIOS.`
+        message: `Verified! Welcome ${query} to 7H STUDIO.`
       }));
     }
 
@@ -106,7 +106,7 @@ module.exports = async (req, res) => {
           rolesCount: (member.roles || []).length,
           joinedAt: member.joined_at
         },
-        message: `Verified! Welcome ${u.username} to 7H STUDIOS.`
+        message: `Verified! Welcome ${u.username} to 7H STUDIO.`
       }));
     } else {
       res.statusCode = 200;
@@ -114,7 +114,7 @@ module.exports = async (req, res) => {
       return res.end(JSON.stringify({
         success: true,
         inServer: false,
-        message: 'User was not found in 7H STUDIOS server. Please join our Discord server first!'
+        message: 'User was not found in 7H STUDIO server. Please join our Discord server first!'
       }));
     }
   } catch (err) {

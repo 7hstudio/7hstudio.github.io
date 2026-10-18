@@ -5,7 +5,7 @@ module.exports = (req, res) => {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Entering 7H STUDIOS...</title>
+  <title>Entering 7H STUDIO...</title>
   <style>
     body { background: #07090e; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; text-align: center; }
     .box { background: #0e121b; border: 1px solid rgba(88, 101, 242, 0.4); box-shadow: 0 0 45px rgba(88, 101, 242, 0.3); border-radius: 20px; padding: 3rem 2.5rem; max-width: 440px; width: 90%; }
@@ -19,7 +19,7 @@ module.exports = (req, res) => {
   <div class="box">
     <div class="spinner"></div>
     <h2>Access Granted!</h2>
-    <p id="msg">Entering 7H STUDIOS Store...</p>
+    <p id="msg">Entering 7H STUDIO Store...</p>
   </div>
   <script>
     async function init() {

@@ -64,7 +64,7 @@ module.exports = async (req, res) => {
       return res.end(JSON.stringify({
         success: true,
         stats: {
-          serverName: guild.name || '7H STUDIOS',
+          serverName: guild.name || '7H STUDIO',
           memberCount: guild.approximate_member_count || 708,
           presenceCount: guild.approximate_presence_count || 77,
           channelsCount: channels.length || 24,
@@ -113,7 +113,7 @@ module.exports = async (req, res) => {
               title,
               description: annMsg,
               color: embedColor,
-              footer: { text: '7H STUDIOS • Official Announcement System' },
+              footer: { text: '7H STUDIO • Official Announcement System' },
               timestamp: new Date().toISOString()
             }]
           })
