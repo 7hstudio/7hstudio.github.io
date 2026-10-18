@@ -29,7 +29,7 @@ const PRODUCTS = [
       "DALL-E 3",
       "High Speed"
     ],
-    "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80",
+    "thumbnail": "assets/images/products/chatgpt.png",
     "fallbackImage": "assets/images/scripts.jpg",
     "featured": true
   },
@@ -46,7 +46,7 @@ const PRODUCTS = [
       "Google AI",
       "Instant Delivery"
     ],
-    "thumbnail": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&auto=format&fit=crop&q=80",
+    "thumbnail": "assets/images/products/gemini_pro.png",
     "fallbackImage": "assets/images/scripts.jpg",
     "featured": true
   },
@@ -63,7 +63,7 @@ const PRODUCTS = [
       "4K Streaming",
       "Full Nitro"
     ],
-    "thumbnail": "https://images.unsplash.com/photo-1614680376593-902f749f7ffc?w=800&auto=format&fit=crop&q=80",
+    "thumbnail": "assets/images/products/discord_nitro.jpg",
     "fallbackImage": "assets/images/scripts.jpg",
     "featured": true
   },
@@ -80,8 +80,53 @@ const PRODUCTS = [
       "Premium Access",
       "Instant"
     ],
-    "thumbnail": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&auto=format&fit=crop&q=80",
+    "thumbnail": "assets/images/products/spotify.png",
     "fallbackImage": "assets/images/scripts.jpg",
+    "featured": true
+  },
+  {
+    "id": "prod_1792360504349",
+    "discordMessageId": "1561497856647499959",
+    "discordChannelId": "1549470043845165189",
+    "name": "NEW Vip 50  Pack Guns  EDITION V4",
+    "category": "Guns",
+    "price": "$60",
+    "isFree": false,
+    "description": "丨NEW Vip 50  Pack Guns  EDITION V4 ᴘʀɪX丨  60$",
+    "tags": [
+      "0.00ms Resmon",
+      "ESX / QBCore",
+      "Open Config"
+    ],
+    "thumbnail": "assets/images/weapons.jpg",
+    "fallbackImage": "assets/images/weapons.jpg",
+    "gallery": [
+      "https://cdn.discordapp.com/attachments/1549470043845165189/1561497822250008636/Enregistrement_de_lecran_2026-10-18_223235.mp4?ex=6ad691ac&is=6ad5402c&hm=71f038648e024dd69af4c0ac8ccd33e65df06fc342cd644601892da77ba9410b&",
+      "https://cdn.discordapp.com/attachments/1549470043845165189/1561497856081272842/Enregistrement_de_lecran_2026-10-18_223622.mp4?ex=6ad691b4&is=6ad54034&hm=a1e7e9de938668ccb98a7f517236236f78093240203ec50151798e5075f9ad7c&"
+    ],
+    "featured": true
+  },
+  {
+    "id": "prod_1792357632246",
+    "discordMessageId": "1561485824481165352",
+    "discordChannelId": "1549470043845165189",
+    "name": "Pack Guns  HALLOWYN EDITION V3",
+    "category": "Guns",
+    "price": "$30",
+    "isFree": false,
+    "description": "丨Pack Guns  HALLOWYN EDITION V3 ᴘʀɪX丨  30$",
+    "tags": [
+      "0.00ms Resmon",
+      "ESX / QBCore",
+      "Open Config"
+    ],
+    "thumbnail": "assets/images/products/1561485824481165352_0.png",
+    "fallbackImage": "assets/images/weapons.jpg",
+    "gallery": [
+      "assets/images/products/1561485824481165352_0.png",
+      "assets/images/products/1561485824481165352_1.png",
+      "https://cdn.discordapp.com/attachments/1549470043845165189/1561485820169429022/Enregistrement_de_lecran_2026-10-18_220128.mp4?ex=6ad6867e&is=6ad534fe&hm=a4120193de96dbae84f4f0e526df99774d63d7f3261c4c17e988a78be8fc7abe&"
+    ],
     "featured": true
   },
   {
