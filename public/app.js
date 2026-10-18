@@ -1,5 +1,5 @@
 /* ===================================================================
-   7H STUDIOS • APPLICATION JAVASCRIPT
+   7H STUDIO • APPLICATION JAVASCRIPT
    Store Engine, Dynamic Filter, Modal & Mandatory Discord Gatekeeper
    =================================================================== */
 
@@ -173,7 +173,7 @@ function initApp() {
     unlockGateImmediate();
     updateNavbarUserProfile();
     renderProducts();
-    showToast('🎉 Welcome to 7H STUDIOS Platform!');
+    showToast('🎉 Welcome to 7H STUDIO Platform!');
   };
 
   // Fetch real-time Discord stats from our backend API
@@ -548,7 +548,7 @@ function initApp() {
 
         setTimeout(() => {
           unlockGateImmediate();
-          showToast(`🎉 Access Granted! Welcome to 7H STUDIOS, ${data.user.username}!`);
+          showToast(`🎉 Access Granted! Welcome to 7H STUDIO, ${data.user.username}!`);
         }, 1200);
       } else {
         showGateFailureState(query, data.message);
@@ -573,7 +573,7 @@ function initApp() {
         </div>
       </div>
       <p style="font-size:0.88rem; color:#d1fae5; margin-bottom:0.8rem;">
-        Membership confirmed in <strong>7H STUDIOS</strong> server. Unlocking platform with 10% discount & free resources...
+        Membership confirmed in <strong>7H STUDIO</strong> server. Unlocking platform with 10% discount & free resources...
       </p>
       <div style="display:flex; gap:0.6rem;">
         <button class="btn btn-emerald btn-sm" onclick="unlockGateImmediate()">Enter Platform Now &rarr;</button>
@@ -588,11 +588,11 @@ function initApp() {
     gateResultBox.innerHTML = `
       <h4 class="auth-failure-title">⛔ ACCESS RESTRICTED</h4>
       <p class="auth-failure-desc">
-        ${escapeHtml(message || 'You must join 7H STUDIOS Discord server to access the platform and view assets.')}
+        ${escapeHtml(message || 'You must join 7H STUDIO Discord server to access the platform and view assets.')}
       </p>
       <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
         <a href="https://discord.gg" target="_blank" rel="noopener noreferrer" class="btn btn-discord btn-sm">
-          <span>🚀 Join 7H STUDIOS Discord (708 Members)</span>
+          <span>🚀 Join 7H STUDIO Discord (708 Members)</span>
         </a>
         <a href="/api/auth/discord" class="btn btn-emerald btn-sm">
           <span>⚡ Retry Authorize</span>
@@ -772,7 +772,7 @@ function initApp() {
     } else {
       modalPriceBadge.textContent = prod.price;
       modalPriceBadge.classList.remove('has-discount');
-      if (modalDiscountInfo) modalDiscountInfo.textContent = `Join 7H STUDIOS Discord to save 10% on this item`;
+      if (modalDiscountInfo) modalDiscountInfo.textContent = `Join 7H STUDIO Discord to save 10% on this item`;
     }
 
     const isVideo = (prod.thumbnail && prod.thumbnail.toLowerCase().includes('.mp4')) ||
@@ -841,7 +841,7 @@ function initApp() {
   };
 
   // ===================================================================
-  // 7H STUDIOS DIRECT DISCORD TICKET ORDER SYSTEM
+  // 7H STUDIO DIRECT DISCORD TICKET ORDER SYSTEM
   // ===================================================================
   let activeTicketProduct = null;
   let currentTicketOrderRef = '';
@@ -953,7 +953,7 @@ function initApp() {
     const finalPrice = elTotalPrice ? elTotalPrice.textContent : activeTicketProduct.price;
     const customerTag = verifiedMember ? `@${verifiedMember.username} (${verifiedMember.id})` : 'Client';
     
-    const textToCopy = `🛒 Hello 7H STUDIOS Staff! I want to buy: ${activeTicketProduct.name} | Price: ${finalPrice} | Ref: #${currentTicketOrderRef} | Member: ${customerTag}`;
+    const textToCopy = `🛒 Hello 7H STUDIO Staff! I want to buy: ${activeTicketProduct.name} | Price: ${finalPrice} | Ref: #${currentTicketOrderRef} | Member: ${customerTag}`;
     
     navigator.clipboard.writeText(textToCopy).then(() => {
       showToast('📋 Détails de la commande copiés dans le presse-papiers !');
@@ -968,7 +968,7 @@ function initApp() {
     const finalPrice = elTotalPrice ? elTotalPrice.textContent : activeTicketProduct.price;
     const customerTag = verifiedMember ? `@${verifiedMember.username} (${verifiedMember.id})` : 'Client';
 
-    const textToCopy = `🛒 Hello 7H STUDIOS Staff! I want to buy: ${activeTicketProduct.name} | Price: ${finalPrice} | Ref: #${currentTicketOrderRef} | Member: ${customerTag}`;
+    const textToCopy = `🛒 Hello 7H STUDIO Staff! I want to buy: ${activeTicketProduct.name} | Price: ${finalPrice} | Ref: #${currentTicketOrderRef} | Member: ${customerTag}`;
 
     // Copy text to clipboard automatically
     navigator.clipboard.writeText(textToCopy).catch(() => {});
@@ -991,7 +991,7 @@ function initApp() {
       })
     }).catch(() => {});
 
-    showToast(`🎉 Détails copiés ! Ouverture de Discord 7H STUDIOS...`);
+    showToast(`🎉 Détails copiés ! Ouverture de Discord 7H STUDIO...`);
     closeCheckoutModalDirect();
 
     setTimeout(() => {
@@ -1001,7 +1001,7 @@ function initApp() {
 
   window.copyProductLink = function() {
     if (!activeProduct) return;
-    const shareText = `7H STUDIOS • ${activeProduct.name} (${activeProduct.price})`;
+    const shareText = `7H STUDIO • ${activeProduct.name} (${activeProduct.price})`;
     navigator.clipboard.writeText(shareText).then(() => {
       showToast('Product title & info copied to clipboard!');
     });
@@ -1404,7 +1404,7 @@ function initApp() {
     const price = document.getElementById('admin-prod-price').value.trim() || '$14.99';
     const tagsRaw = document.getElementById('admin-prod-tags').value.trim();
     const img = document.getElementById('admin-prod-img').value.trim() || 'assets/images/scripts.jpg';
-    const desc = document.getElementById('admin-prod-desc').value.trim() || 'High quality FiveM asset from 7H Studios.';
+    const desc = document.getElementById('admin-prod-desc').value.trim() || 'High quality FiveM asset from 7H Studio.';
 
     if (!name) {
       showToast('Product name is required.');
@@ -1473,7 +1473,7 @@ function initApp() {
     const discordUrl = document.getElementById('admin-part-discord').value.trim();
     const webUrl = document.getElementById('admin-part-web').value.trim();
     const banner = document.getElementById('admin-part-banner').value.trim();
-    const desc = document.getElementById('admin-part-desc').value.trim() || 'Official partner of 7H Studios network.';
+    const desc = document.getElementById('admin-part-desc').value.trim() || 'Official partner of 7H Studio network.';
 
     if (!name || !discordUrl) {
       showToast('Partner name and Discord URL are required.');

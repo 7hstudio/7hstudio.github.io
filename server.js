@@ -126,7 +126,7 @@ const requestHandler = async (req, res) => {
   if (pathname === '/api/health' || pathname === '/ping' || pathname === '/api/hello') {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    return res.end(JSON.stringify({ status: 'ok', platform: '7H STUDIOS', timestamp: Date.now() }));
+    return res.end(JSON.stringify({ status: 'ok', platform: '7H STUDIO', timestamp: Date.now() }));
   }
 
   // Stats
@@ -143,7 +143,7 @@ const requestHandler = async (req, res) => {
           return res.end(JSON.stringify({
             success: true,
             guildId: GUILD_ID,
-            name: guild.name || '7H STUDIOS',
+            name: guild.name || '7H STUDIO',
             totalMembers: guild.approximate_member_count || 708,
             onlineMembers: guild.approximate_presence_count || 77,
             iconUrl: guild.icon ? `https://cdn.discordapp.com/icons/${GUILD_ID}/${guild.icon}.png` : 'assets/images/logo.png'
@@ -158,7 +158,7 @@ const requestHandler = async (req, res) => {
     return res.end(JSON.stringify({
       success: true,
       guildId: GUILD_ID,
-      name: '7H STUDIOS',
+      name: '7H STUDIO',
       totalMembers: 708,
       onlineMembers: 77,
       iconUrl: 'assets/images/logo.png'
@@ -186,7 +186,7 @@ const requestHandler = async (req, res) => {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Entering 7H STUDIOS...</title>
+  <title>Entering 7H STUDIO...</title>
   <style>
     body { background: #07090e; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; text-align: center; }
     .box { background: #0e121b; border: 1px solid rgba(88, 101, 242, 0.4); box-shadow: 0 0 45px rgba(88, 101, 242, 0.3); border-radius: 20px; padding: 3rem 2.5rem; max-width: 440px; width: 90%; }
@@ -200,7 +200,7 @@ const requestHandler = async (req, res) => {
   <div class="box">
     <div class="spinner"></div>
     <h2>Access Granted!</h2>
-    <p id="msg">Entering 7H STUDIOS Store...</p>
+    <p id="msg">Entering 7H STUDIO Store...</p>
   </div>
   <script>
     async function init() {
@@ -365,7 +365,7 @@ const requestHandler = async (req, res) => {
               rolesCount: (member.roles || []).length,
               joinedAt: member.joined_at
             },
-            message: `Verified! Welcome ${u.username} to 7H STUDIOS.`
+            message: `Verified! Welcome ${u.username} to 7H STUDIO.`
           }));
         }
       }
@@ -375,7 +375,7 @@ const requestHandler = async (req, res) => {
       return res.end(JSON.stringify({
         success: true,
         inServer: false,
-        message: 'User was not found in 7H STUDIOS server. Please join our Discord server first!'
+        message: 'User was not found in 7H STUDIO server. Please join our Discord server first!'
       }));
     } catch(err) {
       res.statusCode = 500;
@@ -400,7 +400,7 @@ const requestHandler = async (req, res) => {
 
           const embed = {
             title: `🛒 NEW ORDER: #${orderId}`,
-            description: `An order has been placed on the **7H STUDIOS** web store!`,
+            description: `An order has been placed on the **7H STUDIO** web store!`,
             color: 0x10b981,
             fields: [
               { name: '📦 Asset Ordered', value: `${productName || 'FiveM Asset'}`, inline: true },
@@ -410,7 +410,7 @@ const requestHandler = async (req, res) => {
               { name: '📝 Ref / Note', value: `${reference || 'None'}`, inline: true },
               { name: '⚡ Status', value: '⏳ Awaiting Payment / Ticket Verification', inline: true }
             ],
-            footer: { text: '7H STUDIOS • Order Dispatch Engine' },
+            footer: { text: '7H STUDIO • Order Dispatch Engine' },
             timestamp: new Date().toISOString()
           };
 
@@ -453,7 +453,7 @@ const requestHandler = async (req, res) => {
       return res.end(JSON.stringify({
         success: true,
         stats: {
-          serverName: '7H STUDIOS',
+          serverName: '7H STUDIO',
           memberCount: 708,
           presenceCount: 77,
           channelsCount: 24,
@@ -483,7 +483,7 @@ const requestHandler = async (req, res) => {
                 title,
                 description: annMsg,
                 color: color ? parseInt(color.replace('#', ''), 16) : 0x5865F2,
-                footer: { text: '7H STUDIOS • Official Announcement' },
+                footer: { text: '7H STUDIO • Official Announcement' },
                 timestamp: new Date().toISOString()
               }]
             })
@@ -530,7 +530,7 @@ const requestHandler = async (req, res) => {
 if (require.main === module) {
   const server = http.createServer(requestHandler);
   server.listen(PORT, () => {
-    console.log(`🌐 7H STUDIOS Running on http://localhost:${PORT}`);
+    console.log(`🌐 7H STUDIO Running on http://localhost:${PORT}`);
   });
 }
 

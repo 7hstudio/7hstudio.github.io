@@ -85,6 +85,34 @@ const PRODUCTS = [
     "featured": true
   },
   {
+    "id": "prod_1792337224857",
+    "discordMessageId": "1561400231214587985",
+    "discordChannelId": "1549470043845165189",
+    "name": "Pack Guns  HALLOWYN EDITION V3",
+    "category": "Guns",
+    "price": "$30",
+    "isFree": false,
+    "description": "丨Pack Guns  HALLOWYN EDITION V3 ᴘʀɪX丨  30$",
+    "tags": [
+      "0.00ms Resmon",
+      "ESX / QBCore",
+      "Open Config"
+    ],
+    "thumbnail": "assets/images/products/1561400231214587985_0.png",
+    "fallbackImage": "assets/images/weapons.jpg",
+    "gallery": [
+      "assets/images/products/1561400231214587985_0.png",
+      "assets/images/products/1561400231214587985_1.png",
+      "assets/images/products/1561400231214587985_2.png",
+      "assets/images/products/1561400231214587985_3.png",
+      "assets/images/products/1561400231214587985_4.png",
+      "assets/images/products/1561400231214587985_5.png",
+      "assets/images/products/1561400231214587985_6.png",
+      "assets/images/products/1561400231214587985_7.png"
+    ],
+    "featured": true
+  },
+  {
     "id": "prod_1",
     "discordMessageId": "1555029794930823248",
     "discordChannelId": "1549470040913477644",
@@ -726,7 +754,7 @@ const PRODUCTS = [
     "category": "Lobbies",
     "price": "$19.99",
     "isFree": false,
-    "description": "Premium FiveM Lobbies resource developed exclusively by 7H STUDIOS. High performance, 0.00ms resmon, clean config and lifetime updates.",
+    "description": "Premium FiveM Lobbies resource developed exclusively by 7H STUDIO. High performance, 0.00ms resmon, clean config and lifetime updates.",
     "tags": [
       "0.00ms Resmon",
       "ESX / QBCore",
@@ -939,7 +967,7 @@ const PRODUCTS = [
     "category": "Hosting",
     "price": "$19.99",
     "isFree": false,
-    "description": "Premium FiveM Hosting resource developed exclusively by 7H STUDIOS. High performance, 0.00ms resmon, clean config and lifetime updates.",
+    "description": "Premium FiveM Hosting resource developed exclusively by 7H STUDIO. High performance, 0.00ms resmon, clean config and lifetime updates.",
     "tags": [
       "0.00ms Resmon",
       "ESX / QBCore",
