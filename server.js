@@ -54,7 +54,8 @@ const MIME_TYPES = {
   '.jpeg': 'image/jpeg',
   '.gif': 'image/gif',
   '.svg': 'image/svg+xml',
-  '.ico': 'image/x-icon'
+  '.ico': 'image/x-icon',
+  '.zip': 'application/zip'
 };
 
 const requestHandler = async (req, res) => {

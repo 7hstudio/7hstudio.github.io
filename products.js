@@ -1,5 +1,29 @@
 const PRODUCTS = [
   {
+    "id": "script_7h_boombox",
+    "name": "⚡ 7H BeatStorm 3D Boombox & Sound System Pro",
+    "category": "Scripts",
+    "price": "$24.99",
+    "isFree": false,
+    "downloadUrl": "downloads/7h-boombox.zip",
+    "description": "The ultimate FiveM 3D Boombox script! 0.00ms idle resmon, HRTF 3D spatial acoustics with real-time wall occlusion & reverb, physical burnable mixtapes, shoulder carry & ground drop animations, party trunk vehicle docking, studio equalizer web NUI deck, and powerbank battery system. 100% compatible with QBCore, Qbox & ESX.",
+    "tags": [
+      "0.00ms Resmon",
+      "3D Spatial HRTF",
+      "Party Trunk Dock",
+      "Physical Cassettes",
+      "QBCore / Qbox / ESX",
+      "Studio EQ Deck"
+    ],
+    "thumbnail": "assets/images/products/boombox.jpg",
+    "fallbackImage": "assets/images/scripts.jpg",
+    "gallery": [
+      "assets/images/products/boombox.jpg",
+      "assets/images/products/boombox_ui.jpg"
+    ],
+    "featured": true
+  },
+  {
     "id": "sub_netflix",
     "name": "Netflix Premium 4K UHD Profile",
     "category": "Subscriptions",
